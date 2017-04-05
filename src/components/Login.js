@@ -27,7 +27,7 @@ class Login extends Component {
       })
     }).then((user) => {
       this.props.loginAction(user.username, user.token)
-      if (user.token) {
+      if (this.props.token) {
         return "You are now logged in.";
       } else { 
         return user.message
