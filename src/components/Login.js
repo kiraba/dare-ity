@@ -27,22 +27,12 @@ class Login extends Component {
       })
     }).then((user) => {
       this.props.loginAction(user.username, user.token)
-      if (!user.username) {
-        alert("Authentication failed. User not found.");
-    } else if (user.token) {
-      if (user.password != req.body.password) {
-        alert("Authentication failed. Wrong password.");
-      } else {
-        var token = jwt.sign(user, app.get('superSecret'), {
-          alert("You're golden.")
-        });
-
-
-      if(this.props.token){
-        alert('Yo, you got a token/hey girl hey/nick is awesome');
-      } else if {
-        alert('Sorry bro.')
+      if (user.token) {
+        return "You are now logged in.";
+      } else { 
+        return user.message
       }
+
     })
   }
 
