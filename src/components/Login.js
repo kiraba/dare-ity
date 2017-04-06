@@ -8,13 +8,6 @@ class Login extends Component {
             password: ''
           }
 
-  usernameChange(e){
-    this.setState({username: e.target.value})
-  }
-  passwordChange(e){
-    this.setState({password: e.target.value})
-  }
-
   loginSubmit(){
     fetch('/authenticate', {
       method: 'POST', 
@@ -39,8 +32,8 @@ class Login extends Component {
   render() {
     return (
       <div className='Login'>
-        <input type='text' placeholder='Username' value={this.state.username} onChange={this.usernameChange.bind(this)} />
-        <input type='password' placeholder='Password' value={this.state.password} onChange={this.passwordChange.bind(this)} />
+        <input type='text' placeholder='Username' value={this.state.username} onChange={(username) => this.setState({username})} />
+        <input type='password' placeholder='Password' value={this.state.password} onChange={(password) => this.setState({password})} />
         <button className='loginButton' type="submit" onSubmit={this.loginSubmit.bind(this)}>Login</button> 
       </div>
     );
