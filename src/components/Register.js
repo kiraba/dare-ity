@@ -3,7 +3,6 @@ import {User} from 'darity-state';
 import 'whatwg-fetch';
 
 class Register extends Component {
-  
   state = {
             username: '', 
             email: '',
