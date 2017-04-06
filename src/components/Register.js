@@ -44,9 +44,9 @@ class Register extends Component {
   render() {
     return (
       <div className='register'>
-        <input type='text' placeholder='Username' value={this.state.username} onChange={this.usernameChange.bind(this)} />
-        <input type='text' placeholder='Email Address' value={this.state.email} onChange={this.emailChange.bind(this)} />
-        <input type='password' placeholder='Password' value={this.state.password} onChange={this.passwordChange.bind(this)} />
+        <input type='text' placeholder='Username' value={this.state.username} onChange={(username) => this.setState({username})} />
+        <input type='text' placeholder='Email Address' value={this.state.email} onChange={(email) => this.setState({email})} />
+        <input type='password' placeholder='Password' value={this.state.password} onChange={(password) => this.setState({password})} />
         <button className='registerButton' type="submit" onSubmit={this.registerSubmit.bind(this)}>Login</button> 
       </div>
     );
