@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { User } from 'darity-state';
 import 'whatwg-fetch';
-import { PastDare } from './UserProfilePastDare.js';
-import { CurrentDare } from './UserProfileCurrentDare.js';
+import { UserProfilePastDare } from './UserProfilePastDare.js';
+import { UserProfileCurrentDare } from './UserProfileCurrentDare.js';
 import { DisplayUser } from 'darity-state'
 
 class UserProfile extends Component {
-
+  loadData = () => fetch('/api/fetch_user')
+                    .then(user => this.props.viewProfile(user))
+  
   componentWillMount() {
-    fetch('/api/fetch_user', {
-      .then(user => this.props.viewProfile(user))
-    }
+    this.loadData()
   }
-
+  
   render() {
     const {pic, username, current, past, info} = this.props.currentProfile;
     return (
