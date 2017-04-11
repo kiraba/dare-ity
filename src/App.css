@@ -1,24 +1,145 @@
-.App {
-  text-align: center;
+.VideoBlock {
+  width: auto;
+  height: 720px;
+  padding: 60px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+@font-face {
+     font-family: Moon-Bold;
+     src: url('./fonts/MoonBold.otf'); 
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+@font-face {
+     font-family: Moon-Light;
+     src: url('./fonts/MoonLight.otf'); 
+}
+
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.overlayArea {
+  background-color: rgba(14, 24, 61, .5); 
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  position: absolute;
+}
+
+.textAreaBox p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.textAreaBox {
+  background-color: transparent;
+  font-family: Moon-Light;
   color: white;
+  border: solid;
+  border-width: 3.5px;
+  border-color: white;
+  margin-top: 30%;
+  margin-bottom: 30%;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 30px 30px 25px 30px;
+  float: center;
+  text-align: center;
+  width: 30%;
+  font-size: 30px;
+
+}
+input {
+  background: transparent;
+  font-family: Moon-Light;
+  color: white;
+  line-height: 20px;
+  font-size: 16px;
+  padding-left: 5px;
+  border: solid;
+  border-width: 1px;
+  
 }
 
-.App-intro {
-  font-size: large;
+button {
+  background-color: transparent;
+  color: white;
+  font-family: Moon-Light;
+  border: solid;
+  border-width: 0px;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+::placeholder {
+  color: rgba(255, 255, 255, .8);
+}
+
+a:link {
+    color: white; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+.login a:hover {
+    color: #60C7C9;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.signUp a:hover {
+    color: #EF6C0A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.continue a:hover {
+    color: #FDCB43;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+.login {
+  padding: 10px;
+  background: transparent; 
+}
+
+.signUp {
+  padding: 10px;
+  background: transparent; 
+}
+.continue {
+  padding: 10px;
+  background: transparent; 
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
 }
