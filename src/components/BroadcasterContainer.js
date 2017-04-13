@@ -6,13 +6,13 @@ class BroadcasterContainer extends Component {
   render() {
     return (
       <div className="BroadcasterContainer">
-        <div className="B1">
+        <div className="B">
           <Broadcasters />
         </div>
-        <div className="B2">
+        <div className="B">
           <Broadcasters />
         </div>
-        <div className="B3">
+        <div className="B">
           <Broadcasters />
         </div>
     </div>
