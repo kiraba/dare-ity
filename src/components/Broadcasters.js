@@ -19,4 +19,5 @@ class Broadcasters extends Component {
 }
 export default Broadcasters;
 
-//bio limit 200 characters
+// bio limit: 200 characters.
+

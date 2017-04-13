@@ -49,8 +49,10 @@
   text-align: justify;
 }
 
+
 .bio-photo {
   align-self: center;
   justify-content: center;
+  /*position: inherit;*/
   max-width: 100%;
 }
