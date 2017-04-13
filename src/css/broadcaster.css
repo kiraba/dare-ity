@@ -1,0 +1,66 @@
+.BroadcasterContainer {
+  display: flex;
+  display: -webkit-flex;
+  background-color: rgba(14, 24, 61, .5);
+  min-width: 100%;
+  min-height: 100%;
+  justify-content: space-around;
+  align-content: center;
+  padding: 0px;
+  position: absolute;
+}
+
+/*flex-item (children)*/
+
+.B1 {
+  background-color: rgba(89, 89, 89, 0.54);
+  align-self: center;
+  justify-content: center;
+  font-family: Moon-Light;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}
+.B2 {
+  background-color: rgba(89, 89, 89, 0.54);
+  align-self: center;
+  justify-content: center;
+  font-family: Moon-Light;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+}
+.B3 {
+  background-color: rgba(89, 89, 89, 0.54);
+  align-self: center;
+  justify-content: center;
+  font-family: Moon-Light;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.BioTextBox {
+  width: 70%;
+}
+
+.broadcaster-bio-container {
+  display: flex;
+  align-content: center;
+  position: absolute;
+}
+
+.broadcaster-bio {
+  align-self: center;
+  justify-content: center;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.bio-photo {
+  align-self: center;
+  justify-content: center;
+}
