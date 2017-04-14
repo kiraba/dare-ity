@@ -1,4 +1,4 @@
-.People {
+.Homepage {
   display: flex;
   display: -webkit-flex;
   background-color: rgba(14, 24, 61, .5);
@@ -9,26 +9,51 @@
   padding: 0px;
   position: absolute;
 }
-
-/*flex-item (children)*/
-
-.textAreaBox {
-  background-color: transparent;
-  align-self: center;
-  justify-content: center;
-  font-family: Moon-Light;
-  color: white;
-  border: solid;
-  border-width: 3.5px;
-  border-color: white;
-  text-align: center;
-  font-size: 30px;
-  padding: 50px;
+.SafeArea {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.textAreaBox p {
-  padding: 0px;
-  margin: 0px;
+.Header {
+  text-align: center;
+  color: white;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+}
+
+
+.Title {
+  margin-left: 20px;
+  color: white;
+  text-align: left;
+}
+
+/*.Video {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-content: center;
+}*/
+
+.HomepageVid {
+  align-self: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  /*margin: 1%;*/
+  background-color: white;
+}
+
+.HomepageVid p {
+  color: black;
+  font-family: Moon-Light;
+  text-align: right;
+}
+
+h2 {
+  color: white;
+  font-family: Moon-Light;
 }
 
 /*fonts*/
@@ -42,3 +67,63 @@
      font-family: Moon-Light;
      src: url('../fonts/MoonLight.otf');
 }
+
+
+
+
+/*Scrolling*/
+.container {
+    width: 75%;
+    height: 3em;
+    /*margin: 1em auto;*/
+    overflow: hidden;
+    /*position: relative;*/
+    /*box-sizing: border-box;*/
+}
+
+.marquee {
+    top: 6em;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Make it move! */
+@keyframes marquee {
+    0%   { top:   8em }
+    100% { top: -11em }
+}
+
+/* Make it look pretty */
+.comments .marquee {
+  margin: 0;
+    padding: 0 1em;
+    line-height: 1.5em;
+    font-family: Moon-Light;
+}
+
+.comments:before, .comments::before,
+.comments:after,  .comments::after {
+    left: 0;
+    z-index: 1;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 2em;
+}
+
+.comments:after, .comments::after {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+.comments:before, .comments::before {
+    top: 0;
+}
+
+
+

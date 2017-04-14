@@ -1,4 +1,7 @@
 /*splash page*/
+h1 {
+  font-family: Moon-Bold;
+}
 
 * { box-sizing: border-box; }
 .video-background {

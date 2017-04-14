@@ -6,6 +6,7 @@
     "darity-state": "git+https://git@github.com/Montana-Code-School/darity-state.git",
     "react": "15.4.2",
     "react-dom": "15.4.2",
+    "react-player": "^0.14.3",
     "react-stripe-checkout": "^2.2.5",
     "whatwg-fetch": "^2.0.3"
   },

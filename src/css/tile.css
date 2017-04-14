@@ -1,0 +1,84 @@
+.Tile {
+    min-width: 100%;
+}
+
+
+
+.square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    /*filter: grayscale(100%);*/
+}
+
+.img_1-1{
+    background-image:url('https://s-media-cache-ak0.pinimg.com/originals/d0/3c/85/d03c85254cb216393d931ca6316e5c91.jpg');
+    filter: grayscale(100%);
+}
+
+.img_1-1:hover {
+    color: rgba(255, 255, 255, .8)
+}
+
+.img_1-2{
+    background-image:url('https://s-media-cache-ak0.pinimg.com/originals/16/85/b2/1685b259996d8e585ddf47754c282faa.jpg');
+    filter: grayscale(100%);
+}
+.img_1-3{
+    background-image:url('http://www.seasonson4th.com/wp-content/uploads/2016/04/mule-deer-foundation-rattlesnake-mt-chapter-banque-84.jpeg');
+    filter: grayscale(100%);
+}
+
+.img_2-1{background-image:url('https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/13537702_10209939099652898_8907788068611790849_n.jpg?oh=51fffe601ea84eb5ebf68f2997ff8956&oe=598447C4');}
+.img_2-2{background-image:url('https://avatars3.githubusercontent.com/u/23302593?v=3&s=400');}
+.img_2-3{background-image:url('https://avatars2.githubusercontent.com/u/25285076?v=3&s=400');}
+
+.img_3-1{background-image:url('https://i.ytimg.com/vi/bq49rFO6CsU/maxresdefault.jpg');}
+.img_3-2{background-image:url('http://sharing.wxyz.com/sharescnn/photo/2016/08/17/the%20rock_1471415436249_44454638_ver1.0_640_480.PNG');}
+.img_3-3{background-image:url('http://eastcoaststories.com/wp-content/uploads/2016/09/Push-1.jpg');}
+
+
+
+body {
+    font-size:20px;
+    font-family: Moon-Light;
+    color: #fff;
+    text-align:center;
+    background:#ECECEC;
+}
+
+#bottom {
+    clear:both;
+    margin:0 1.66%;
+    width:89.68%;
+    padding: 3.5%;
+    background-color:#1E1E1E;
+    color: #fff;
+}
+#bottom p{
+    text-align:center;
+    line-height:2em;
+}
+#bottom a{
+    color: #000;
+    text-decoration:none;
+    border:1px solid #000;
+    padding:10px 20px 12px;
+    line-height:70px;
+    background:#ccc;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#bottom a:hover{
+    background:#ECECEC;
+    border:1px solid #fff;
+}
+

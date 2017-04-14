@@ -15,6 +15,12 @@ class BroadcasterContainer extends Component {
         <div className="B">
           <Broadcasters />
         </div>
+        <div className="B">
+          <Broadcasters />
+        </div>
+        <div className="B">
+          <Broadcasters />
+        </div>
     </div>
     );
   }
