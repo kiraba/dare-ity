@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './css/app.css';
-import Splash from './components/Splash'
-import SignUp from './components/SignUp'
-import Login from './components/Login'
+import '../css/app.css';
+import Splash from './splash'
+import SignUp from './signUp'
+import Login from './Login'
 
 class SplashPage extends Component {
   constructor(){
@@ -18,7 +18,7 @@ class SplashPage extends Component {
 
   boxMode(){
     if(this.state.boxMode === 'Splash'){
-      return <Splash changeBoxMode={this.changeBoxMode.bind(this)}/>
+      return <Splash changeBoxMode={this.changeBoxMode.bind(this)} changePageMode={this.props.changePageMode}/>
     } else if (this.state.boxMode === 'SignUp'){
       return <SignUp />
     }else if (this.state.boxMode === 'Login'){

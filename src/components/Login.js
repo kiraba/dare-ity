@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../css/app.css';
 
 class Login extends Component {
   render() {
@@ -7,11 +7,11 @@ class Login extends Component {
     return (
       <div className='textAreaBox'>
 	      <div>
-	      <p><span className='login'><a href='#'>Login</a></span>or <span className='signUp'><a href='#'>Sign Up</a></span></p>  
-	      </div>
-	      <div className="continue">
-	      <p><a href='#'>Continue To Site</a></p>
-	      </div>
+        <p>Login</p>
+          <input type='text' placeholder='Email' /> <br />
+          <input type='password' placeholder='Password' /> <br />
+          <button className='signUpButton' type="submit" >Login</button> 
+        </div>
       </div>
     );
   }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../css/homepage.css';
-import BroadcasterContainer from './BroadcasterContainer';
+import Broadcasters from './Broadcasters';
 import HomepageMainVid from './HomepageMainVid';
 import DareContainer from './DareContainer'
-import Tile from './tile'
+import Dare from './Dare'
+import CompletedDares from './CompletedDares'
 
 
 class Homepage extends Component {
@@ -12,7 +13,7 @@ class Homepage extends Component {
       <div className="HomePage">
         <div className="SafeArea">
           <div className='Header'>
-            <h1>fun(d)</h1>
+            <h1>FUN(d)</h1>
           </div> 
           <div className="Video">
               <HomepageMainVid />
@@ -21,7 +22,19 @@ class Homepage extends Component {
             <h1>Active Dares <a className='InlineLink'> View All</a></h1>
           </div>
           <div className='Tiles'>
-            <Tile />
+            <Dare />
+          </div>
+          <div className='Title'>
+            <h1>Broadcasters <a className='InlineLink'> View All</a></h1>
+          </div>
+          <div className='Tiles'>
+            <Broadcasters />
+          </div>
+          <div className='Title'>
+            <h1>Completed Dares <a className='InlineLink'> View All</a></h1>
+          </div>
+          <div className='Tiles'>
+            <CompletedDares />
           </div>
         </div>
       </div>

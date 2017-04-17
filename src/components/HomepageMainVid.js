@@ -7,7 +7,7 @@ class HomepageMainVid extends Component {
     return (
       <div className='HomepageVid'>
         <ReactPlayer url='https://youtu.be/nPoSDRvqyUg' playing loop="true" width='100%' height="720px" />
-        <p> Dare Title &nbsp;&nbsp;&nbsp;&nbsp;  @username</p>
+        <div className="Caption"> <div><span>Dare Title</span> <span> &nbsp; @username</span></div></div>
       </div>
 
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../css/app.css';
 
 class Splash extends Component {
   render() {
@@ -11,7 +11,7 @@ class Splash extends Component {
 	         <span className='signUp'><a onClick={()=>self.props.changeBoxMode('SignUp')}>Sign Up</a></span></p>  
 	      </div>
 	      <div className="continue">
-	      <p><a href='#'>Continue To Site</a></p>
+	      <p><a onClick={()=>self.props.changePageMode('Homepage')}>Continue To Site</a></p>
 	      </div>
       </div>
     );
