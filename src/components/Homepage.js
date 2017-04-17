@@ -12,7 +12,7 @@ class Homepage extends Component {
     <div className="HomePage">
     <div className="SafeArea">
     <div className='Header'>
-      <h1>Dareity</h1>
+      <h1>fun(d)</h1>
      </div> 
     <div className="Video">
         <HomepageMainVid />

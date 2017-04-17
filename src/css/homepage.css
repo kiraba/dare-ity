@@ -21,7 +21,10 @@
   display: -webkit-flex;
   justify-content: space-around;
 }
-
+.Tiles {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
 .Title {
   margin-left: 20px;

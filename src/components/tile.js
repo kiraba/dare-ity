@@ -4,28 +4,35 @@ import '../css/tile.css';
 class Tile extends Component {
   render() {
     return (
-    <div className="Tile">
-    <div>
-    <div className="square img_1-1">
-    </div>
-    <div className="square img_1-2">
-    </div>
-    <div className="square img_1-3">
-    </div>
-    </div>
-    <div className="square img_2-1">
-    </div>
-    <div className="square img_2-2">
-    </div>
-    <div className="square img_2-3">
-    </div>
-    <div className="square img_3-1">
-    </div>
-    <div className="square img_3-2">
-    </div>
-    <div className="square img_3-3">
-    </div>
-
+    <div className="TilesContainer">
+        <div className="Tile">
+            <a className="TileLink" href="#">
+            <img src='https://s-media-cache-ak0.pinimg.com/originals/d0/3c/85/d03c85254cb216393d931ca6316e5c91.jpg' />
+            <h1>@username</h1>
+            <p>This is a user bio. User information will be found here.</p>
+            </a>
+        </div>
+            <div className="Tile">
+            <a className="TileLink" href="#">
+            <img src='https://s-media-cache-ak0.pinimg.com/originals/16/85/b2/1685b259996d8e585ddf47754c282faa.jpg' />
+            <h1>@username</h1>
+            <p>This is a user bio. User information will be found here.</p>
+            </a>
+        </div>
+        <div className="Tile">
+            <a className="TileLink" href="#">
+            <img src='http://www.seasonson4th.com/wp-content/uploads/2016/04/mule-deer-foundation-rattlesnake-mt-chapter-banque-84.jpeg' />
+            <h1>@username</h1>
+            <p>This is a user bio. User information will be found here.</p>
+            </a>
+        </div>
+        <div className="Tile">
+            <a className="TileLink" href="#">
+            <img src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6ewSSo96Fo5SyCISYhQsmHv07iuX-8K1zc_-fXFcV5xet2J33' />
+            <h1>@username</h1>
+            <p>This is a user bio. User information will be found here.</p>
+            </a>
+        </div>
     </div>
     );
   }
