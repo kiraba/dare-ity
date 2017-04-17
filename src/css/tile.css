@@ -7,13 +7,13 @@
 
 .Tile {
     flex-grow: 1;
-    max-width: 23%;
+    width: 250px;
+    max-width: 250px;
     overflow: hidden;
     position: relative;
     visibility:hidden;
     outline:1px solid transparent;
-
-    /*max-width: 25%;*/
+    margin-bottom: 20px;
     
 }
 .Tile img {
@@ -21,14 +21,17 @@
     height: 100%;
     overflow: hidden;
     filter: grayscale(100%);
-    /*max-width: 100%;
-    max-height: 100%;*/
-
-    /*max-height: 75%;*/
 }
 
+.Tile img:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
 
-
+.Tile:after {
+    flex: auto;
+}
 
 /*Hover CSS*/
  .Tile * {
@@ -58,16 +61,14 @@
     background-color: rgba(96, 199, 201, .8);
     -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
           transition:          transform .2s ease-out, opacity .3s ease-out;
-    /*bottom: 50%;
-    padding-top: 50%;
     z-index: 1;
-    transform: translate3d(0,-100%,0);*/
 
 }
 
 .Tile h1 {
-  bottom: 35.5%;
-  padding-top:50%;
+  bottom: 50%;
+  margin: 0px;
+  padding-top:30%;
   z-index: 1;
   -webkit-transform:translate3d(0,-100%,0);
       -ms-transform:translate3d(0,-100%,0);
@@ -75,7 +76,8 @@
 }
 .Tile p {
   top: 50%;
-  padding-bottom:50%;
+  margin: 0px;
+  padding-bottom:31%;
   -webkit-transform:translate3d(0,100%,0);
       -ms-transform:translate3d(0,100%,0);
           transform:translate3d(0,100%,0);

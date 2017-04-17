@@ -21,16 +21,30 @@
   display: -webkit-flex;
   justify-content: space-around;
 }
+
+.Title {
+  color: white;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.InlineLink {
+  font-size: .6em;
+}
+
+.InlineLink:hover {
+  /*color: #60C7C9;*/
+  border: solid 1.5px #FFFFFF;
+  padding: 3px;
+  text-decoration: none;
+}
+
 .Tiles {
-  padding-top: 30px;
   padding-bottom: 30px;
 }
 
-.Title {
-  margin-left: 20px;
-  color: white;
-  text-align: left;
-}
+
 
 /*.Video {
   display: flex;

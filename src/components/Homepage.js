@@ -9,19 +9,22 @@ import Tile from './tile'
 class Homepage extends Component {
   render() {
     return (
-    <div className="HomePage">
-    <div className="SafeArea">
-    <div className='Header'>
-      <h1>fun(d)</h1>
-     </div> 
-    <div className="Video">
-        <HomepageMainVid />
+      <div className="HomePage">
+        <div className="SafeArea">
+          <div className='Header'>
+            <h1>fun(d)</h1>
+          </div> 
+          <div className="Video">
+              <HomepageMainVid />
+          </div>
+          <div className='Title'>
+            <h1>Active Dares <a className='InlineLink'> View All</a></h1>
+          </div>
+          <div className='Tiles'>
+            <Tile />
+          </div>
+        </div>
       </div>
-      <div className='Tiles'>
-      <Tile />
-      </div>
-      </div>
-    </div>
     );
   }
 }
