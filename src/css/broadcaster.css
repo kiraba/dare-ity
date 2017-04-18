@@ -1,0 +1,55 @@
+.BroadcasterContainer {
+  display: flex;
+  display: -webkit-flex;
+  /*min-width: 100%;
+  min-height: 100%;*/
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+  position: absolute;
+  flex-wrap: wrap;
+}
+
+/*flex-item (children)*/
+
+.B {
+  background-color: rgba(89, 89, 89, 0.7);
+  align-self: center;justify-content: center;
+  /**/
+  font-family: Moon-Light;
+  color: white;
+  letter-spacing: .1em;
+  text-align: center;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.B:hover {
+  background-color: #60C7C9;
+}
+
+.BioTextBox {
+  width: 70%;
+}
+
+.broadcaster-bio-container {
+  display: flex;
+  align-content: center;
+  position: absolute;
+}
+
+.broadcaster-bio {
+  align-self: center;
+  justify-content: center;
+  max-width: 200px;
+  min-width: 150px;
+  text-align: left;
+}
+
+.bio-photo {
+  align-self: center;
+  justify-content: center;
+  /*position: inherit;*/
+  max-width: 200px;
+}
+

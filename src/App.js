@@ -1,48 +1,36 @@
 import React, { Component } from 'react';
-import './App.css';
-import Splash from './components/splash'
-import SignUp from './components/signUp'
-import Login from './components/Login'
+import './css/app.css';
+import Homepage from './components/Homepage'
+import SplashPage from './components/SplashPage'
+
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      boxMode: 'Splash'
+      pageMode: 'Homepage'
     }
   }
 
-  changeBoxMode(boxMode){
-    this.setState({boxMode: boxMode});
+
+  changePageMode(pageMode){
+    this.setState({pageMode: pageMode});
   }
 
-  boxMode(){
-    if(this.state.boxMode === 'Splash'){
-      return <Splash changeBoxMode={this.changeBoxMode.bind(this)}/>
-    } else if (this.state.boxMode === 'SignUp'){
-      return <SignUp />
-    }else if (this.state.boxMode === 'Login'){
-      return <Login />
+  pageMode(){
+    if(this.state.pageMode === 'SplashPage'){
+      return <SplashPage changePageMode={this.changePageMode.bind(this)}/>
+    } else if (this.state.pageMode === 'Homepage'){
+      return <Homepage changePageMode={this.changePageMode.bind(this)} />
     }
   }
-
   render() {
     return (
       <div>
-        <div className="video-background">
-          <div className="video-foreground">
-             <iframe src="https://www.youtube.com/embed/nPoSDRvqyUg?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameBorder="0" allowFullScreen></iframe>
-          </div>
-        </div>
-        <div className='overlayArea'>
-          {this.boxMode()}
-        </div>
+        {this.pageMode()}
       </div>
-      
+
     );
   }
 }
-// https://www.npmjs.com/package/react-player
 export default App;
-
-
