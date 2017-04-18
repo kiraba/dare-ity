@@ -9,7 +9,7 @@ class Dare extends Component {
             <a className="TileLink" href="#">
             <img src='https://s-media-cache-ak0.pinimg.com/originals/d0/3c/85/d03c85254cb216393d931ca6316e5c91.jpg' />
             <h1>Dare Name</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt purus eget nunc ...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt purus eget nunc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt purus eget nunc</p>
             </a>
         </div>
             <div className="Tile">

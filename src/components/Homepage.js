@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../css/homepage.css';
 import Broadcasters from './Broadcasters';
 import HomepageMainVid from './HomepageMainVid';
-import DareContainer from './DareContainer'
 import Dare from './Dare'
 import CompletedDares from './CompletedDares'
 

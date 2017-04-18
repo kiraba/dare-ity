@@ -3,7 +3,6 @@ import '../css/app.css';
 
 class Login extends Component {
   render() {
-  	console.log("pop")
     return (
       <div className='textAreaBox'>
 	      <div>
