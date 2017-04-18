@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './css/app.css';
-// import SplashPage from './components/SplashPage'
 import Homepage from './components/Homepage'
 import SplashPage from './components/SplashPage'
 
@@ -34,5 +33,4 @@ class App extends Component {
     );
   }
 }
-// https://www.npmjs.com/package/react-player
 export default App;
