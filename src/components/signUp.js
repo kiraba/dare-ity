@@ -111,7 +111,7 @@ class SignUp extends Component {
         <input type='password' placeholder='Password' value={this.state.password} onChange={this.passwordChange.bind(this)} /> <br />
         <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
         <label for="isNpo">I'm a Nonprofit Organization</label></div>
-        <input type="file" id="file-input" onChange={this.getSignedRequest.bind(this)} /> <br />
+        <input type="file" id="file-input" onChange={this.imageChange.bind(this)} /> <br />
         <input type="hidden" id="avatar-url" name="avatar-url" value={profilePic}/>
         <button className='registerButton' type="submit" onSubmit={this.registerSubmit.bind(this)}>Sign Up</button> 
       </div>
