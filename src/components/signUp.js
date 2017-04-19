@@ -46,7 +46,7 @@ class SignUp extends Component {
     }).then((user) => {
       this.props.registerAction(user.name, user.email, user.is_npo, user.file, user.token)
       if (this.props.token) {
-        return "Your account has been registered.";
+        return "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.";
       } else { 
         return user.message;
       }
@@ -63,6 +63,7 @@ class SignUp extends Component {
           document.getElementById('preview').src = url;
           document.getElementById('avatar-url').value = url;
           this.setState({ file: url });
+          alert('Good job you did it bud.')
         }
         else{
           alert('Could not upload file.');
