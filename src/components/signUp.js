@@ -45,7 +45,7 @@ class SignUp extends Component {
         profilepic_path: this.state.profilepic_path
       })
     }).then((user) => {
-      this.props.registerAction(user.name, user.email, user.is_npo, user.file, user.token)
+      this.props.registerAction(user.name, user.email, user.is_npo, user.profilepic_path, user.token)
       if (this.props.token) {
         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.");
       } else {
@@ -64,7 +64,7 @@ class SignUp extends Component {
         if(xhr.status === 200){
           document.getElementById('preview').src = url;
           document.getElementById('avatar-url').value = url;
-          this.setState({ file: url });
+          this.setState({ profilepic_path: url });
           alert('Good job you did it bud.')
         }
         else{
