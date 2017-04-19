@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../css/viewdare.css';
-import CompletedDares from './CompletedDares'
+import CompletedDares from './CompletedDares';
 
 
 class ViewDare extends Component {
+  
   render() {
     return (
       <div className="HomePage">
@@ -21,10 +22,27 @@ class ViewDare extends Component {
             </div>
             </div>
           <div >
-            <h1 className="ladescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo nibh a nibh accumsan, nec porta dolor mollis. Cras ut erat quis nunc gravida lobortis. Curabitur id malesuada arcu. In iaculis orci sed odio vestibulum, eu tempor sem lobortis. Duis in porttitor quam, eget aliquam libero. Sed placerat efficitur dolor et varius. Praesent ultrices dui quis placerat varius. Aliquam congue nisl mi, non auctor massa bibendum a. Integer ut ullamcorper orci, nec ultrices magna. Proin ut tellus pulvinar, rhoncus nisi id, viverra dolor. Suspendisse ut tempor urna, quis vestibulum orci. Duis ipsum ligula, commodo in metus vitae, euismod sagittis arcu. Nullam volutpat placerat laoreet. Cras enim quam, vulputate sed nulla et, porttitor tincidunt nulla. Proin id elit eu nisi malesuada varius.</h1>
+            <h1 className="ladescription">Lorem ipsum dolor sit amet, consectetur Praesent ultrices dui quis placerat varius. Aliquam </h1>
           </div>
           <div>
-            <button className="elButton">Participate</button>
+          <button type="button" data-target="#myupdate" data-toggle="modal" className="btn btn-info btn-lg">Participate</button>
+            <div className="modal fade" id="myupdate" role="dialog">
+              <div className="modal-dialog modal-sm">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <button type="button" className="close" data-dismiss="modal">&times;</button>
+                    <h4 className="modal-title">Agreement of Participation</h4>
+                  </div>
+                  <div className="modal-body">
+                    <p>I am verifying that I would like to participate in this dare.</p>
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" className="btn btn-default" data-dismiss="modal">I agree</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
               <div className='Title'>
             <h1>View Dares <a className='InlineLink'> View All</a></h1>
@@ -34,7 +52,6 @@ class ViewDare extends Component {
           </div>
           </div>
         </div>
-
     );
   }
 }
