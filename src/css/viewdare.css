@@ -38,7 +38,6 @@
 
 .theDare {
 	font-family: 'Fira Sans Condensed', sans-serif;
-	font-weight: 500;
 	color: white;
 }
 
@@ -46,19 +45,20 @@
 	color: white;
 	text-align: center;
   text-transform: none !important;
-  font-size: 
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
-.elButton {
+.btn-lg {
   display: flex;
   position: absolute;
   left:80%;
-  border: solid;
+  border: solid; 
   font-size: 20px;
 }
 
-.elButton:hover {
+.btn-lg:hover {
   background-color: #60C7C9;
+  opacity: .6;
 
 }
 

@@ -22,10 +22,12 @@ class ViewDare extends Component {
             </div>
             </div>
           <div >
-            <h1 className="ladescription">Lorem ipsum dolor sit amet, consectetur Praesent ultrices dui quis placerat varius. Aliquam </h1>
+            <h2 className="ladescription">Hello! Have you ever of the ice bucket challenge? Well today we are daring you to the ice coffee challenge. 
+            and upload a video of yourself pouring a bucket of ice coffee on your head. Have what it takes? Click the participate button now! Have fun
+            and stay safe! </h2>
           </div>
           <div>
-          <button type="button" data-target="#myupdate" data-toggle="modal" className="btn btn-info btn-lg">Participate</button>
+          <button type="button" data-target="#myupdate" data-toggle="modal" className="btn btn-lg">Participate</button>
             <div className="modal fade" id="myupdate" role="dialog">
               <div className="modal-dialog modal-sm">
                 <div className="modal-content">
