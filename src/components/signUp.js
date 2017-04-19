@@ -96,8 +96,10 @@ class SignUp extends Component {
   imageChange() {
   console.log("this is checking to make sure a file is selected")
     document.getElementById("file-input").onchange = () => {
+      console.log("potatoes sitting on apples !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
       const files = document.getElementById('file-input').files;
       const file = files[0];
+      console.log(file, files, "tell us what file is")
       if(file == null){
         return alert('No file selected.');
       }
