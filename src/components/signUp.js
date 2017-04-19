@@ -31,7 +31,7 @@ class SignUp extends Component {
 
 
   registerSubmit(){
-    fetch('/create_user', {
+    fetch('http://fun-d-backend.herokuapp.com/create_user', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json' //content type in mobile = accept
@@ -106,7 +106,7 @@ class SignUp extends Component {
       <div className='textAreaBox'>
 	      <div>
         <p>Sign Up</p>
-        <input type='text' placeholder='Username' value={this.state.name} onChange={(name) => this.setState({name})} /> <br />
+        <input type='text' placeholder='Username' value={this.state.name} onChange={this.usernameChange.bind(this)} /> <br />
         <input type='text' placeholder='Email Address' value={this.state.email} onChange={(email) => this.setState({email})} /> <br />
         <input type='password' placeholder='Password' value={this.state.password} onChange={(password) => this.setState({password})} /> <br />
         <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
