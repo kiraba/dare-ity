@@ -74,7 +74,7 @@ class SignUp extends Component {
 
   getSignedRequest(file){
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
+    xhr.open('GET', `http://fun-d-backend.herokuapp.com/sign-s3?file-name=${file.name}&file-type=${file.type}`);
     xhr.onreadystatechange = () => {
       if(xhr.readyState === 4){
         if(xhr.status === 200){
