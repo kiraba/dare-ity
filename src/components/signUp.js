@@ -92,7 +92,7 @@ class SignUp extends Component {
     xhr.send();
   }
 
-  imageChange()
+  imageChange() {
   console.log("this is checking to make sure a file is selected")
     document.getElementById("file-input").onchange = () => {
       const files = document.getElementById('file-input').files;
