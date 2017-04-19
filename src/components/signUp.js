@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/app.css';
 import {User} from 'darity-state';
 import 'whatwg-fetch';
-import profilePic from '../../public/images/blank-profile-picture';
+import profilePic from '../../public/images/blank-profile-picture.png';
 
 class SignUp extends Component {
     state = {
@@ -62,6 +62,7 @@ class SignUp extends Component {
         if(xhr.status === 200){
           document.getElementById('preview').src = url;
           document.getElementById('avatar-url').value = url;
+          this.setState({ file: url });
         }
         else{
           alert('Could not upload file.');
@@ -108,9 +109,8 @@ class SignUp extends Component {
         <input type='text' placeholder='Username' value={this.state.name} onChange={(name) => this.setState({name})} /> <br />
         <input type='text' placeholder='Email Address' value={this.state.email} onChange={(email) => this.setState({email})} /> <br />
         <input type='password' placeholder='Password' value={this.state.password} onChange={(password) => this.setState({password})} /> <br />
-        <input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} /> <br />
-          <label for="isNpo">Check if you are a Nonprofit Organization</label>
-        <p id="status">Please upload a profile picture</p>
+        <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
+        <label for="isNpo">I'm a Nonprofit Organization</label></div>
         <input type="file" id="file-input" onChange={this.imageChange.bind(this)} /> <br />
         <input type="hidden" id="avatar-url" name="avatar-url" value={profilePic}/>
         <button className='registerButton' type="submit" onSubmit={this.registerSubmit.bind(this)}>Sign Up</button> 
