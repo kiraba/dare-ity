@@ -107,11 +107,11 @@ class SignUp extends Component {
 	      <div>
         <p>Sign Up</p>
         <input type='text' placeholder='Username' value={this.state.name} onChange={this.usernameChange.bind(this)} /> <br />
-        <input type='text' placeholder='Email Address' value={this.state.email} onChange={(email) => this.setState({email})} /> <br />
-        <input type='password' placeholder='Password' value={this.state.password} onChange={(password) => this.setState({password})} /> <br />
+        <input type='text' placeholder='Email Address' value={this.state.email} onChange={this.emailChange.bind(this)} /> <br />
+        <input type='password' placeholder='Password' value={this.state.password} onChange={this.passwordChange.bind(this)} /> <br />
         <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
         <label for="isNpo">I'm a Nonprofit Organization</label></div>
-        <input type="file" id="file-input" onChange={this.imageChange.bind(this)} /> <br />
+        <input type="file" id="file-input" onChange={this.getSignedRequest.bind(this)} /> <br />
         <input type="hidden" id="avatar-url" name="avatar-url" value={profilePic}/>
         <button className='registerButton' type="submit" onSubmit={this.registerSubmit.bind(this)}>Sign Up</button> 
       </div>
