@@ -10,7 +10,7 @@ class SignUp extends Component {
             email: '',
             password: '',
             is_npo: false,
-            file: {profilePic}
+            profilepic_path: {profilePic}
           }
 
   usernameChange(e){
@@ -31,6 +31,7 @@ class SignUp extends Component {
 
 
   registerSubmit(){
+    console.log("this is where we put the url in the database")
     fetch('http://fun-d-backend.herokuapp.com/create_user', {
       method: 'POST',
       headers: {
@@ -41,7 +42,7 @@ class SignUp extends Component {
         email: this.state.email,
         password: this.state.password,
         is_npo: this.state.is_npo,
-        file: this.state.file
+        profilepic_path: this.state.profilepic_path
       })
     }).then((user) => {
       this.props.registerAction(user.name, user.email, user.is_npo, user.file, user.token)
@@ -55,6 +56,7 @@ class SignUp extends Component {
   }
 
   uploadFile(file, signedRequest, url){
+    console.log('this is where we get a signed request' )
     const xhr = new XMLHttpRequest();
     xhr.open('PUT', signedRequest);
     xhr.onreadystatechange = () => {
@@ -90,7 +92,8 @@ class SignUp extends Component {
     xhr.send();
   }
 
-  imageChange() {
+  imageChange()
+  console.log("this is checking to make sure a file is selected")
     document.getElementById("file-input").onchange = () => {
       const files = document.getElementById('file-input').files;
       const file = files[0];
@@ -102,7 +105,7 @@ class SignUp extends Component {
   }
 
   render() {
-    console.log('We are getting here')
+    console.log('This is where we render the signup')
     return (
       <div className='textAreaBox'>
 	      <div>
