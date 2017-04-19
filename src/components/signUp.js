@@ -46,7 +46,7 @@ class SignUp extends Component {
     }).then((user) => {
       this.props.registerAction(user.name, user.email, user.is_npo, user.file, user.token)
       if (this.props.token) {
-        return "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.";
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.");
       } else {
         return user.message;
       }
