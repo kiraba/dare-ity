@@ -6,10 +6,10 @@ import profilePic from '../../public/images/blank-profile-picture.png';
 
 class SignUp extends Component {
     state = {
-            name: '', 
+            name: '',
             email: '',
-            password: '', 
-            is_npo: false, 
+            password: '',
+            is_npo: false,
             file: {profilePic}
           }
 
@@ -32,28 +32,28 @@ class SignUp extends Component {
 
   registerSubmit(){
     fetch('http://fun-d-backend.herokuapp.com/create_user', {
-      method: 'POST', 
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json' //content type in mobile = accept
       },
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
-        password: this.state.password, 
-        is_npo: this.state.is_npo, 
+        password: this.state.password,
+        is_npo: this.state.is_npo,
         file: this.state.file
       })
     }).then((user) => {
       this.props.registerAction(user.name, user.email, user.is_npo, user.file, user.token)
       if (this.props.token) {
         return "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.";
-      } else { 
+      } else {
         return user.message;
       }
 
     })
   }
-  
+
   uploadFile(file, signedRequest, url){
     const xhr = new XMLHttpRequest();
     xhr.open('PUT', signedRequest);
@@ -114,7 +114,7 @@ class SignUp extends Component {
         <label for="isNpo">I'm a Nonprofit Organization</label></div>
         <input type="file" id="file-input" onChange={this.imageChange.bind(this)} /> <br />
         <input type="hidden" id="avatar-url" name="avatar-url" value={profilePic}/>
-        <button className='registerButton' type="submit" onSubmit={this.registerSubmit.bind(this)}>Sign Up</button> 
+        <button className='registerButton' type="submit" onSubmit={this.registerSubmit.bind(this)}>Sign Up</button>
       </div>
       </div>
     );
@@ -122,10 +122,3 @@ class SignUp extends Component {
 }
 
 export default SignUp;
-
-
-
-
-
-
-
