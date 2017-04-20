@@ -112,7 +112,17 @@ input {
   padding-left: 5px;
   border: solid;
   border-width: 1px;
+}
 
+input[type=file]::-webkit-file-upload-button {
+    border: 1px solid grey;
+    background-color: transparent;
+    color: white;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    border: solid;
+    border-width: 0px;
+    font-size: 18px;
 }
 
 button {
