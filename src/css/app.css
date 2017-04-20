@@ -115,10 +115,6 @@ input {
 
 }
 
-#file-input::before {
-  content: 'Upload Profile Picture'
-}
-
 button {
   background-color: transparent;
   color: white;
