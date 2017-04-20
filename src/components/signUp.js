@@ -10,7 +10,8 @@ class SignUp extends Component {
             email: '',
             password: '',
             is_npo: false,
-            profilepic_path: {profilePic}
+            profilepic_path: {profilePic}, 
+            file: ''
           }
 
   usernameChange(e){
@@ -31,84 +32,83 @@ class SignUp extends Component {
 
 
   registerSubmit(){
-    console.log("this is where we put the url in the database")
-    fetch('http://fun-d-backend.herokuapp.com/create_user', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json' //content type in mobile = accept
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password,
-        is_npo: this.state.is_npo,
-        profilepic_path: this.state.profilepic_path
-      })
-    }).then((user) => {
-      this.props.registerAction(user.name, user.email, user.is_npo, user.profilepic_path, user.token)
-      if (this.props.token) {
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.");
-      } else {
-        return user.message;
-      }
-
-    })
+    this.getSignedRequest()
+        .then((picUrl) => {
+          console.log('the state', this.state);
+          console.log('picUrl',picUrl)
+          fetch('http://fun-d-backend.herokuapp.com/api/create_user', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json' //content type in mobile = accept
+            },
+            body: JSON.stringify({
+              name: this.state.name,
+              email: this.state.email,
+              password: this.state.password,
+              is_npo: this.state.is_npo,
+              profilepic_path: picUrl
+            })
+          })
+          .then(response=>response.json())
+          .then((user) => {
+            console.log(user)
+            this.props.register(user.name, user.email, user.is_npo, user.profilepic_path, user.token)
+            if (this.props.token) {
+              console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.");
+            } else {
+              return user.message;
+            }
+          })
+        })
   }
 
   uploadFile(file, signedRequest, url){
-    console.log('this is where we get a signed request' )
-    const xhr = new XMLHttpRequest();
-    xhr.open('PUT', signedRequest);
-    xhr.onreadystatechange = () => {
-      if(xhr.readyState === 4){
-        if(xhr.status === 200){
-          document.getElementById('preview').src = url;
-          document.getElementById('avatar-url').value = url;
-          this.setState({ profilepic_path: url });
-          alert('Good job you did it bud.')
-        }
-        else{
-          alert('Could not upload file.');
+    return new Promise((resolve, reject) => {
+        console.log(file, signedRequest, url, 'Hiiiiiiiii');
+      const xhr = new XMLHttpRequest();
+      xhr.open('PUT', signedRequest);
+      xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4){
+          if(xhr.status === 200){
+            resolve(url)
+          } else {
+            alert('Could not upload file.');
+            reject('Could not upload File')
+          }
         }
       }
-    };
-    xhr.send(file);
+      xhr.send(file);
+    })
   }
 
-  getSignedRequest(file){
-    console.log(file, "THIS IS THE FILE !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://fun-d-backend.herokuapp.com/sign-s3?file-name=${file.name}&file-type=${file.type}`);
-    xhr.onreadystatechange = () => {
-      if(xhr.readyState === 4){
-        if(xhr.status === 200){
-          const response = JSON.parse(xhr.responseText);
-          this.uploadFile(file, response.signedRequest, response.url);
-        }
-        else{
-          alert('Could not get signed URL.');
-        }
-      }
-    };
-    xhr.send();
+  getSignedRequest(){
+    const { file } = this.state;
+    return fetch(`http://fun-d-backend.herokuapp.com/sign-s3?file-name=${file.name}&file-type=${file.type}`, {
+          method: 'GET'
+        })
+    .then((response) => response.json())
+    .then(data => {
+          //if(response.status === 200) {
+            console.log('data', data, this.state.file)
+            return this.uploadFile(file, data.signedRequest, data.url);
+          // } else {
+          //   alert('There was a problem, please try again.')
+          // }
+      });
   }
 
-  imageChange() {
-  console.log("this is checking to make sure a file is selected")
-    document.getElementById("file-input").onchange = () => {
-      console.log("potatoes sitting on apples !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-      const files = document.getElementById('file-input').files;
-      const file = files[0];
-      console.log(file, files, "tell us what file is")
-      if(file == null){
-        return alert('No file selected.');
-      }
-      this.getSignedRequest(file);
-    }
+  imageChange(e) {
+    const reader = new FileReader();
+    const file = e.target.files[0];
+    console.log(file);
+    reader.onload = (upload) => {
+      console.log('file', file)
+      this.setState({ file });
+    };
+    reader.readAsDataURL(file);
   }
 
   render() {
-    console.log('This is where we render the signup')
     return (
       <div className='textAreaBox'>
 	      <div>
@@ -119,12 +119,12 @@ class SignUp extends Component {
         <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
         <label for="isNpo">I'm a Nonprofit Organization</label></div>
         <input type="file" id="file-input" onChange={this.imageChange.bind(this)} /> <br />
-        <input type="hidden" id="avatar-url" name="avatar-url" value={profilePic}/>
-        <button className='registerButton' type="submit" onSubmit={this.registerSubmit.bind(this)}>Sign Up</button>
+        <input type="hidden" id="avatar-url" name="avatar-url" value={this.state.profilepic_path}/>
+        <button className='registerButton' type="submit" onClick={this.registerSubmit.bind(this)}>Sign Up</button>
       </div>
       </div>
     );
   }
 }
 
-export default SignUp;
+export default User(SignUp);
