@@ -3,18 +3,33 @@ import { User } from 'darity-state';
 import 'whatwg-fetch';
 
 class UserProfileCurrentDare extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
+  
+
+  handleUserDare() {
+    fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_user_dares', {
+      method: 'POST'
+    }, 
+    body: JSON.stringify({
+        query: this.state.query
+      })
+    .then(response=>response.json())
+    .then((user) => {
+      this.props.ACTIONREDUCERDISPATCHEDNAME(user.name, user.bio, user.profilepic_path)
+      if (user) {
+        return this.changePageMode();
+      } else { 
+        return user.message
+      }
+    })
   }
 
   render() {
     return (
       <div className="mainContainer">
         <div className="upperBox">
-          <div className="fakePic">{this.props.dare.npoLogo}</div>
-          <h2>{this.props.dare.name}</h2>
-          <p>{this.props.dare.info}</p>
+          <div className="fakePic">{this.props.dare.profilepic_path}</div>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </div>
         <div className="lowerBox">
           <p>Share</p>
