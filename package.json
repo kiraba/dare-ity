@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "darity-state": "git+https://git@github.com/Montana-Code-School/darity-state.git",
+    "jquery": "^3.2.1",
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "react-player": "^0.14.3",
+    "react-popup": "^0.6.0",
     "react-redux": "^5.0.4",
     "react-stripe-checkout": "^2.2.5",
     "redux": "^3.6.0",
