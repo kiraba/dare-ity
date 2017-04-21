@@ -22,7 +22,7 @@ class ViewDare extends Component {
             </div>
             </div>
           <div >
-            <h2 className="ladescription">Hello! Have you ever of the ice bucket challenge? Well today we are daring you to the ice coffee challenge. 
+            <h2 className="ladescription">Hello! Have you ever heard of the ice bucket challenge? Well today we are daring you to the ice coffee challenge. 
             and upload a video of yourself pouring a bucket of ice coffee on your head. Have what it takes? Click the participate button now! Have fun
             and stay safe! </h2>
           </div>

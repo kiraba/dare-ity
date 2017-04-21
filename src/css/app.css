@@ -125,6 +125,18 @@ input[type=file]::-webkit-file-upload-button {
     font-size: 18px;
 }
 
+#textarea {
+    border: 1px solid grey;
+    background-color: transparent !important;
+    color: white;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    border: solid;
+    border-width: 1px;
+    font-size: 18px;
+    width: 168px;
+}
+
 button {
   background-color: transparent;
   color: white;
