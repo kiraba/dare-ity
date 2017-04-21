@@ -9,6 +9,7 @@ class SignUp extends Component {
             name: '',
             email: '',
             password: '',
+            bio: '',
             is_npo: false,
             profilepic_path: {profilePic}, 
             file: ''
@@ -20,6 +21,10 @@ class SignUp extends Component {
 
   emailChange(e){
     this.setState({email: e.target.value})
+  }
+
+  bioChange(e){
+    this.setState({bio: e.target.value})
   }
 
   passwordChange(e){
@@ -49,13 +54,14 @@ class SignUp extends Component {
               name: this.state.name,
               email: this.state.email,
               password: this.state.password,
+              bio: this.state.bio,
               is_npo: this.state.is_npo,
               profilepic_path: picUrl
             })
           })
           .then(response=>response.json())
           .then((user) => {
-            this.props.register(user.name, user.email, user.is_npo, user.profilepic_path)
+            this.props.register(user.name, user.email, user.bio, user.is_npo, user.profilepic_path)
             if (user.name) {
               this.changeBoxMode();
             } else {
@@ -119,6 +125,7 @@ class SignUp extends Component {
         <input type='text' placeholder='Username' value={this.state.name} onChange={this.usernameChange.bind(this)} /> <br />
         <input type='text' placeholder='Email Address' value={this.state.email} onChange={this.emailChange.bind(this)} /> <br />
         <input type='password' placeholder='Password' value={this.state.password} onChange={this.passwordChange.bind(this)} /> <br />
+        <textarea type='textarea' placeholder='Tell Us About Yourself' value={this.state.bio} onChange={this.bioChange.bind(this)} /> <br />
         <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
         <label for="isNpo">I'm a Nonprofit Organization</label></div>
         <input type="file" id="file-input" onChange={this.imageChange.bind(this)} /> <br />

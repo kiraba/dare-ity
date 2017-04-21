@@ -1,24 +1,3 @@
-/*import React, { Component } from 'react';
-import '../css/app.css';
-
-class Login extends Component {
-  render() {
-    return (
-      <div className='textAreaBox'>
-	      <div>
-        <p>Login</p>
-          <input type='text' placeholder='Email' /> <br />
-          <input type='password' placeholder='Password' /> <br />
-          <button className='signUpButton' type="submit" >Login</button> 
-        </div>
-      </div>
-    );
-  }
-}
-// https://www.npmjs.com/package/react-player
-export default Login;*/
-
-
 import React, { Component } from 'react';
 import {User} from 'darity-state';
 import 'whatwg-fetch';
