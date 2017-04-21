@@ -20,9 +20,9 @@ class SplashPage extends Component {
     if(this.state.boxMode === 'Splash'){
       return <Splash changeBoxMode={this.changeBoxMode.bind(this)} changePageMode={this.props.changePageMode}/>
     } else if (this.state.boxMode === 'SignUp'){
-      return <SignUp />
+      return <SignUp changeBoxMode={this.changeBoxMode.bind(this)} />
     }else if (this.state.boxMode === 'Login'){
-      return <Login />
+      return <Login changePageMode={this.props.changePageMode} />
     }
   }
 
@@ -31,7 +31,6 @@ class SplashPage extends Component {
       <div>
         <div className="video-background">
           <div className="video-foreground">
-             <iframe src="https://www.youtube.com/embed/nPoSDRvqyUg?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameBorder="0" allowFullScreen></iframe>
           </div>
         </div>
         <div className='overlayArea'>

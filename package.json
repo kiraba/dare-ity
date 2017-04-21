@@ -9,7 +9,9 @@
     "react-dom": "15.4.2",
     "react-player": "^0.14.3",
     "react-popup": "^0.6.0",
+    "react-redux": "^5.0.4",
     "react-stripe-checkout": "^2.2.5",
+    "redux": "^3.6.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {

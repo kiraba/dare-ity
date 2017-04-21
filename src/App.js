@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './css/app.css';
-// import SplashPage from './components/SplashPage'
 import Homepage from './components/Homepage';
 import SplashPage from './components/SplashPage';
 import ViewDare from './components/ViewDare';
@@ -10,7 +9,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      pageMode: 'ViewDare'
+      pageMode: 'SplashPage'
     }
   }
 
@@ -37,5 +36,4 @@ class App extends Component {
     );
   }
 }
-// https://www.npmjs.com/package/react-player
 export default App;
