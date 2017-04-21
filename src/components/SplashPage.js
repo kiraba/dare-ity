@@ -20,9 +20,9 @@ class SplashPage extends Component {
     if(this.state.boxMode === 'Splash'){
       return <Splash changeBoxMode={this.changeBoxMode.bind(this)} changePageMode={this.props.changePageMode}/>
     } else if (this.state.boxMode === 'SignUp'){
-      return <SignUp />
+      return <SignUp changeBoxMode={this.changeBoxMode.bind(this)} />
     }else if (this.state.boxMode === 'Login'){
-      return <Login />
+      return <Login changePageMode={this.props.changePageMode} />
     }
   }
 

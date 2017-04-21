@@ -27,7 +27,11 @@ class SignUp extends Component {
   }
 
   npoChange(e){
-    this.setState({is_npo: e.target.boolean})
+    this.setState({is_npo: true})
+  }
+
+  changeBoxMode(){
+    this.props.changeBoxMode('Login')
   }
 
 
@@ -51,10 +55,9 @@ class SignUp extends Component {
           })
           .then(response=>response.json())
           .then((user) => {
-            console.log(user)
-            this.props.register(user.name, user.email, user.is_npo, user.profilepic_path, user.token)
-            if (this.props.token) {
-              console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Your account has been registered.");
+            this.props.register(user.name, user.email, user.is_npo, user.profilepic_path)
+            if (user.name) {
+              this.changeBoxMode();
             } else {
               return user.message;
             }
