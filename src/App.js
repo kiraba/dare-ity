@@ -9,7 +9,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      pageMode: 'SplashPage'
+      pageMode: 'Homepage'
     }
   }
 
