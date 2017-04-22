@@ -5,7 +5,7 @@ import '../css/app.css';
 
 class Login extends Component {
   state = {
-            name: '', 
+            name: '',
             password: ''
           }
 
@@ -15,7 +15,7 @@ changePageMode(){
 
   loginSubmit(){
     fetch('http://fun-d-backend.herokuapp.com/api/authenticate', {
-      method: 'POST', 
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json' //content type in mobile = accept
       },
@@ -29,7 +29,7 @@ changePageMode(){
       this.props.login(user.name, user.token)
       if (user.token) {
         return this.changePageMode();
-      } else { 
+      } else {
         return user.message
       }
     })
@@ -42,9 +42,9 @@ changePageMode(){
         <p>Login</p>
           <input type='text' placeholder='Name' value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} /> <br />
           <input type='password' placeholder='Password' value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} /> <br />
-          <button className='signUpButton' type="submit" onClick={this.loginSubmit.bind(this)}>Login</button> 
+          <button className='loginButton' type="submit" onClick={this.loginSubmit.bind(this)}>Login</button> 
         </div>
-      </div> 
+      </div>
     );
   }
 }
