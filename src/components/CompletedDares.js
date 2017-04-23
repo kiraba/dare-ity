@@ -5,7 +5,7 @@ import CompletedDaresComp from './CompletedDaresComp'
 class CompletedDares extends Component {
 
   state = {
-          dareBlocks: []
+          compdareBlocks: []
         }
 
 
@@ -18,16 +18,30 @@ class CompletedDares extends Component {
     })
   .then(response=>response.json())
   .then((dares) => {
-    this.setState({dareBlocks: dares.result});
-    console.log('Completed', dares.result)
+    var filteredDares = [];
+    for(var i = 0; i < dares.result.length; i++){
+      console.log('a;ls--------------skdjf', dares.result[i].video_path)
+      if(dares.result.video_path !== null){
+        //console.log('a;lsdkjfa;lksdjf;alskdjf;lskdjf', dares.result[i])
+        filteredDares.push(dares.result[i])
+      } else{}
+    }
+    console.log('filteredDares', filteredDares)
+    this.setState({compdareBlocks: filteredDares})
+    console.log('this.state.compdareBlocks', this.state.compdareBlocks)
   })
   }
 
+  sorter (element) {
+      return (
+        <CompletedDaresComp element={element} key={element.id} />
+      )
+  }
 
   render() {
     return (
     <div className="TilesContainer">
-    {this.state.dareBlocks.map((element, i) => (<CompletedDaresComp element = {element} key={i} />))}
+    {this.state.compdareBlocks.map(this.sorter)}
     </div>
     );
   }
