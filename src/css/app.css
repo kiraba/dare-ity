@@ -182,6 +182,10 @@ input {
   border: solid;
   border-width: 1px;
 }
+.required {
+  color: #EF6C0A;
+  font-size: 10px;
+}
 
 input[type=file]::-webkit-file-upload-button {
     border: 1px solid grey;
