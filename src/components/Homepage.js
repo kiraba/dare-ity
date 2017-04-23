@@ -13,7 +13,7 @@ class Homepage extends Component {
         <div className="SafeArea">
           <div className='Header'>
             <h1>FUN(d)</h1>
-          </div> 
+          </div>
           <div className="Video">
               <HomepageMainVid />
           </div>
@@ -21,7 +21,7 @@ class Homepage extends Component {
             <h1>Active Dares <a className='InlineLink'> View All</a></h1>
           </div>
           <div className='Tiles'>
-            <Dare />
+            <Dare changePageMode={this.props.changePageMode}/>
           </div>
           <div className='Title'>
             <h1>Broadcasters <a className='InlineLink'> View All</a></h1>

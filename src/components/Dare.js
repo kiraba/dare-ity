@@ -7,18 +7,6 @@ class Dare extends Component {
           dareBlocks: []
         }
 
-  displayDares(arr) {
-    console.log('dareBlocks', arr)
-     arr.map((element, i) => (<h1>{element.title}</h1>))
-      // <div className="Tile">
-      //     <a className="TileLink" href="#">
-      //     <img src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6ewSSo96Fo5SyCISYhQsmHv07iuX-8K1zc_-fXFcV5xet2J33' />
-      //     <h1>Dare Name</h1>
-      //     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt purus eget nunc ...</p>
-      //     </a>
-      // </div>
-
-  }
 
   componentDidMount() {
     fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_dares', {
