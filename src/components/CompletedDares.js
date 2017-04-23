@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
 import '../css/tile.css';
+import CompletedDaresComp from './CompletedDaresComp'
 
 class CompletedDares extends Component {
+
+  state = {
+          dareBlocks: []
+        }
+
+
+  componentDidMount() {
+    fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_user_dares', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' //content type in mobile = accept
+      }
+    })
+  .then(response=>response.json())
+  .then((dares) => {
+    this.setState({dareBlocks: dares.result});
+    console.log('Completed', dares.result)
+  })
+  }
+
+
   render() {
     return (
     <div className="TilesContainer">
-        <div className="Tile CompletedDaresOverlay">
-            <a className="TileLink" href="#">
-            <img src='https://i.ytimg.com/vi/bq49rFO6CsU/maxresdefault.jpg' />
-            <h1>Dare Title</h1>
-            <p>Amount Raised: $100</p>
-            </a>
-        </div>
-            <div className="Tile CompletedDaresOverlay">
-            <a className="TileLink" href="#">
-            <img src='http://sharing.wxyz.com/sharescnn/photo/2016/08/17/the%20rock_1471415436249_44454638_ver1.0_640_480.PNG' />
-            <h1>Dare Title</h1>
-            <p>Amount Raised: $100</p>
-            </a>
-        </div>
-        <div className="Tile CompletedDaresOverlay">
-            <a className="TileLink" href="#">
-            <img src='http://eastcoaststories.com/wp-content/uploads/2016/09/Push-1.jpg' />
-            <h1>Dare Title</h1>
-            <p>Amount Raised: $100</p>
-            </a>
-        </div>
-        <div className="Tile CompletedDaresOverlay">
-            <a className="TileLink" href="#">
-            <img src='http://www.splashscore.com/wp-content/uploads/140819-ice-bucket-challenge-1949_899e03e1c58b45b56812f96bc79680a6.jpg' />
-            <h1>Dare Title</h1>
-            <p>Amount Raised: $100</p>
-            </a>
-        </div>
+    {this.state.dareBlocks.map((element, i) => (<CompletedDaresComp element = {element} key={i} />))}
     </div>
     );
   }
@@ -40,7 +35,3 @@ class CompletedDares extends Component {
 export default CompletedDares;
 
 // 89 characters.
-
-
-
-

@@ -130,7 +130,7 @@ class SignUp extends Component {
         <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
         <label for="isNpo">I am a Nonprofit Organization</label></div>
         </div>
-        <h3 className='profilePic'>Upload Your Profile Picture</h3>
+        <h3 className='profilePic'>Upload Your Profile Picture <span className='required'>*required</span></h3>
         <input type="file" id="file-input" onChange={this.imageChange.bind(this)} />
         <input type="hidden" id="avatar-url" name="avatar-url" value={this.state.profilepic_path}/>
         <button className='registerButton' type="submit" onClick={this.registerSubmit.bind(this)}>Sign Up</button>
