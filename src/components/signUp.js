@@ -9,6 +9,7 @@ class SignUp extends Component {
             name: '',
             email: '',
             password: '',
+            confirmPassword: '',
             bio: '',
             is_npo: false,
             profilepic_path: {profilePic},
@@ -29,6 +30,9 @@ class SignUp extends Component {
 
   passwordChange(e){
     this.setState({password: e.target.value})
+  }
+  confirmChange(e){
+    this.setState({confirmPassword: e.target.value})
   }
 
   npoChange(e){
@@ -54,6 +58,7 @@ class SignUp extends Component {
               name: this.state.name,
               email: this.state.email,
               password: this.state.password,
+              password: this.state.confirmPassword,
               bio: this.state.bio,
               is_npo: this.state.is_npo,
               profilepic_path: picUrl
@@ -91,6 +96,10 @@ class SignUp extends Component {
   }
 
   getSignedRequest(){
+    if (this.state.name && this.state.email &&  this.state.password && this.state.confirmPassword && this.state.bio) {
+
+
+    if (this.state.password === this.state.confirmPassword) {
     const { file } = this.state;
     return fetch(`http://fun-d-backend.herokuapp.com/sign-s3?file-name=${file.name}&file-type=${file.type}`, {
           method: 'GET'
@@ -104,6 +113,12 @@ class SignUp extends Component {
           //   alert('There was a problem, please try again.')
           // }
       });
+    } else {
+      alert('Your password does not match!')
+    }
+  } else {
+    alert('All fields required!')
+  }
   }
 
   imageChange(e) {
@@ -125,6 +140,7 @@ class SignUp extends Component {
         <input type='text' placeholder='Username' value={this.state.name} onChange={this.usernameChange.bind(this)} /> <br />
         <input type='text' placeholder='Email Address' value={this.state.email} onChange={this.emailChange.bind(this)} /> <br />
         <input type='password' placeholder='Password' value={this.state.password} onChange={this.passwordChange.bind(this)} /> <br />
+        <input type='password' placeholder='Confirm Password' value={this.state.confirmPassword} onChange={this.confirmChange.bind(this)} /> <br />
         <textarea type='textarea' id='textarea' placeholder='Tell Us About Yourself' value={this.state.bio} onChange={this.bioChange.bind(this)} /> <br />
         <div className="checkBoxArea">
         <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
