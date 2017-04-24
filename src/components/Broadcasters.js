@@ -17,7 +17,7 @@ class Broadcasters extends Component {
   .then(response=>response.json())
   .then((user) => {
     this.setState({userBlocks: user.result});
-    console.log(user.result)
+    console.log(user.result, 'hi')
   })
   }
   render() {
