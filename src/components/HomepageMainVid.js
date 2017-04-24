@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/homepage.css';
 import ReactPlayer from 'react-player'
-
+import _ from 'lodash'
 class HomepageMainVid extends Component {
 
   state = {
@@ -19,15 +19,11 @@ class HomepageMainVid extends Component {
     })
     .then(response=>response.json())
     .then((dares) => {
-      var filteredDares = [];
-      for(var i = 0; i < dares.result.length; i++){
-        if(typeof dares.result[i].video_path !== 'object' && dares.result[i].video_path !== '' && dares.result[i].video_path !== 'undefined'){
-          filteredDares.push(dares.result[i])
-        }
-      }
-      this.setState({compdareBlocks: filteredDares});
-      var rand = this.state.compdareBlocks[Math.floor(Math.random() * this.state.compdareBlocks.length)];
-      this.setState({video: rand})
+      const filteredDares = dares.result.filter(res => typeof res.video_path === 'string' && res.video_path)
+      var rand = filteredDares[Math.floor(Math.random() * filteredDares.length)];
+      console.log(rand)
+      this.setState({
+                     video: rand ? rand : {}})
     })
   }
 
@@ -36,7 +32,7 @@ class HomepageMainVid extends Component {
     return (
       <div className='HomepageVid'>
         <ReactPlayer url={this.state.video.video_path} playing loop="true" height="720px" width="100%" className="VideoPlayer" />
-        <div className="Caption"> <div><span>Dare Title</span> <span> &nbsp; @username</span></div></div>
+        <div className="Caption"> <div><span>{this.state.video.title}</span> <span> &nbsp; @{this.state.video.name}</span></div></div>
       </div>
 
     );

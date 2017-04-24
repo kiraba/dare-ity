@@ -1,3 +1,12 @@
+.dareBox {
+  background-color: white;
+  width: 100%;
+  min-height: 100%;
+  border: solid 1em;
+  position: absolute;
+  color: gray;
+}
+
 a {
   color: white !important;
 }
@@ -45,6 +54,7 @@ a:visited {
     right: -100%;
     top: -100%;
     bottom: -100%;
+    border: solid 1em;
 
 }
 

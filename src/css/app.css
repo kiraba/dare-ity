@@ -5,6 +5,11 @@
   text-transform: uppercase;
   letter-spacing: .2em;
 }
+.Participate {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .1em;
+}
 
 h1 {
   font-family: 'Fira Sans Condensed', sans-serif;

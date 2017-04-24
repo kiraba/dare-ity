@@ -9,7 +9,8 @@ class DareComp extends Component {
 
     <div className="Tile">
         <a className="DaresOverlay TileLink" onclick={()=>self.props.changePageMode('ViewDare')}>
-        <img src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6ewSSo96Fo5SyCISYhQsmHv07iuX-8K1zc_-fXFcV5xet2J33' alt={""}/>
+        <h5 className='dareBox'>Dare Title</h5>
+
         <h1>{element.title}</h1>
         <p>{element.description} ...</p>
         </a>
@@ -21,7 +22,7 @@ export default DareComp;
 
 // 89 characters.
 
-
+// <img src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6ewSSo96Fo5SyCISYhQsmHv07iuX-8K1zc_-fXFcV5xet2J33' alt={""}/>
 // <div className="Tile">
 //     <a className="TileLink" href="#">
 //     <img src='https://s-media-cache-ak0.pinimg.com/originals/d0/3c/85/d03c85254cb216393d931ca6316e5c91.jpg' />
