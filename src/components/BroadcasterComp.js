@@ -6,7 +6,7 @@ class BroadcasterComp extends Component {
     const { element } = this.props
     return (
 
-    <div className="Tile">
+    <div className=" BroadcastersOverlay Tile">
         <a className="TileLink" href="#">
         <img src={element.profilepic_path} alt={""}/>
         <h1>@{element.name}</h1>

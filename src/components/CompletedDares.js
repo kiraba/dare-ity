@@ -18,6 +18,7 @@ class CompletedDares extends Component {
     .then(response=>response.json())
     .then((dares) => {
       var filteredDares = [];
+      console.log('Complete', dares.result)
       for(var i = 0; i < dares.result.length; i++){
         if(typeof dares.result[i].video_path !== 'object' && dares.result[i].video_path !== '' && dares.result[i].video_path !== 'undefined'){
           filteredDares.push(dares.result[i])

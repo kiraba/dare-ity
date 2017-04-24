@@ -1,3 +1,19 @@
+a {
+  color: white !important;
+}
+
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 .TilesContainer {
     display: flex;
     justify-content: space-between;
@@ -69,19 +85,24 @@
     letter-spacing: .1em;
     text-align: center;
     box-sizing: border-box;
-    background-color: rgba(96, 199, 201, .95);
+    /*background-color: rgba(96, 199, 201, .95);*/
     -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
           transition:          transform .2s ease-out, opacity .3s ease-out;
     z-index: 1;
 
 }
 
+.DaresOverlay h1, .DaresOverlay p{
+    background-color: rgba(96, 199, 201, .95) !important;
+}
+
 .BroadcastersOverlay h1, .BroadcastersOverlay p{
-    background-color: rgba(253, 203, 67, .7) !important;
+    background-color: rgba(253, 203, 67, .9) !important;
 }
 
 .CompletedDaresOverlay h1, .CompletedDaresOverlay p{
-    background-color: rgba(239, 108, 10, .7) !important;
+    background-color: rgba(239, 108, 10, .9) !important;
+    padding: 7%;
 }
 
 .Tile h1 {
