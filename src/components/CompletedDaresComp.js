@@ -4,7 +4,6 @@ import ReactPlayer from 'react-player'
 
 class CompletedDaresComp extends Component {
   render() {
-    var self = this;
     const { element } = this.props
     console.log("a;lsdkjf;alskdjf;lkasdjf", element.video_path)
     if(element.video_path !== null){
