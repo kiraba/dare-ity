@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import '../css/app.css';
-import Splash from './splash'
-import SignUp from './signUp'
-import Login from './Login'
+import Splash from './splash';
+import SignUp from './signUp';
+import Login from './Login';
+import NPOCreateDare from './NPOCreateDare';
 
 class SplashPage extends Component {
   constructor(){
@@ -22,7 +23,9 @@ class SplashPage extends Component {
     } else if (this.state.boxMode === 'SignUp'){
       return <SignUp changeBoxMode={this.changeBoxMode.bind(this)} />
     }else if (this.state.boxMode === 'Login'){
-      return <Login changePageMode={this.props.changePageMode} />
+      return <Login changePageMode={this.props.changePageMode} changeBoxMode={this.changeBoxMode.bind(this)} />
+    } else if (this.state.boxMode === 'NPOCreateDare'){
+      return <NPOCreateDare changeBoxMode={this.changeBoxMode.bind(this)} />
     }
   }
 

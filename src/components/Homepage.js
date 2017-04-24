@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import '../css/homepage.css';
 import Broadcasters from './Broadcasters';
 import HomepageMainVid from './HomepageMainVid';
-import Dare from './Dare'
-import CompletedDares from './CompletedDares'
-import NPOCreateDare from './NPOCreateDare'
+import Dare from './Dare';
+import CompletedDares from './CompletedDares';
 
 class Homepage extends Component {
   render() {
@@ -34,9 +33,6 @@ class Homepage extends Component {
           </div>
           <div className='Tiles'>
             <CompletedDares />
-          </div>
-          <div className='NPOCreateDare'>
-            <NPOCreateDare />
           </div>
         </div>
       </div>
