@@ -26,7 +26,7 @@ changePageMode(){
     })
     .then(response=>response.json())
     .then((user) => {
-      this.props.login(user.name, user.token, user.is_npo, user.profilepic_path)
+      this.props.login(user.name, user.token, user.id, user.is_npo, user.profilepic_path)
       if (user.token) {
         return this.changePageMode();
       } else {
