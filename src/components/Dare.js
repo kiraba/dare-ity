@@ -18,7 +18,6 @@ class Dare extends Component {
   .then(response=>response.json())
   .then((dares) => {
     this.setState({dareBlocks: dares.result});
-    console.log(dares.result)
   })
   }
 
