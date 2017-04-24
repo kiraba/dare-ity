@@ -5,9 +5,8 @@ import CompletedDaresComp from './CompletedDaresComp'
 class CompletedDares extends Component {
 
   state = {
-          dareBlocks: []
+          compdareBlocks: []
         }
-
 
   componentDidMount() {
     fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_user_dares', {
@@ -16,22 +15,33 @@ class CompletedDares extends Component {
         'Content-Type': 'application/json' //content type in mobile = accept
       }
     })
-  .then(response=>response.json())
-  .then((dares) => {
-    this.setState({dareBlocks: dares.result});
-    console.log('Completed', dares.result)
-  })
+    .then(response=>response.json())
+    .then((dares) => {
+      var filteredDares = [];
+      for(var i = 0; i < dares.result.length; i++){
+        if(typeof dares.result[i].video_path !== 'object' && dares.result[i].video_path !== '' && dares.result[i].video_path !== 'undefined'){
+          filteredDares.push(dares.result[i])
+        }
+      }
+      this.setState({compdareBlocks: filteredDares})
+    })
   }
 
+  renderCompletedDares(element) {
+    return (
+      <CompletedDaresComp element={element} key={element.id} />
+    )
+  }
 
   render() {
     return (
-    <div className="TilesContainer">
-    {this.state.dareBlocks.map((element, i) => (<CompletedDaresComp element = {element} key={i} />))}
-    </div>
+      <div className="TilesContainer">
+        {this.state.compdareBlocks.map(this.renderCompletedDares)}
+      </div>
     );
   }
 }
+
 export default CompletedDares;
 
 // 89 characters.

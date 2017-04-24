@@ -27,7 +27,7 @@ class Dare extends Component {
   render() {
     return (
     <div className="TilesContainer">
-      {this.state.dareBlocks.map((element, i) => (<DareComp element = {element} key={i} />))}
+      {this.state.dareBlocks.map((element, i) => (<DareComp element={element} key={i} />))}
     </div>
     );
   }

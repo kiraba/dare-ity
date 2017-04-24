@@ -7,7 +7,6 @@ class Broadcasters extends Component {
           userBlocks: []
         }
 
-
   componentDidMount() {
     fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_users', {
       method: 'POST',
@@ -24,7 +23,7 @@ class Broadcasters extends Component {
   render() {
     return (
     <div className="TilesContainer">
-    {this.state.userBlocks.map((element, i) => (<BroadcasterComp element = {element} key={i} />))}
+    {this.state.userBlocks.map((element, i) => (<BroadcasterComp element={element} key={i} />))}
     </div>
     );
   }

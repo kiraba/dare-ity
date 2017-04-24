@@ -8,7 +8,7 @@ class BroadcasterComp extends Component {
 
     <div className="Tile">
         <a className="TileLink" href="#">
-        <img src={element.profilepic_path} />
+        <img src={element.profilepic_path} alt={""}/>
         <h1>{element.name}</h1>
         <p>{element.bio} ...</p>
         </a>
