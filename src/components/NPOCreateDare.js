@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import '../css/app.css';
+import {User} from 'darity-state';
+import 'whatwg-fetch';
 
 class NPOCreateDare extends Component {
   state = {
+    dareDescription: "",
+    dareTitle: ""
 
   }
 
@@ -9,27 +14,48 @@ class NPOCreateDare extends Component {
 
   }
 
+  dareDescriptionChange(e){
+    this.setState({dareDescription: e.target.value})
+  }
+
+  dareTitleChange(e){
+    this.setState({dareTitle: e.target.value})
+  }
+//
+//   dareSubmit(){
+//     fetch('http://fun-d-backend.herokuapp.com/api/create_dare', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json' //content type in mobile = accept
+//       },
+//       body: JSON.stringify({
+//         title: this.state.dareTitle,
+//         description: this.state.dareDescription,
+//         npo_creator: this.props.id,
+//         image_path: this.props.profilepic_path
+//       })
+//     .then(response=>response.json())
+//     console.log(response)
+//   })
+// }
+
+
   render() {
     return (
       <div className='textAreaBox'>
 	      <div>
-        <p>Create a new dare.</p>
-        <input type='text' placeholder='Username' value={this.state.name} onChange={this.usernameChange.bind(this)} /> <br />
-        <input type='text' placeholder='Email Address' value={this.state.email} onChange={this.emailChange.bind(this)} /> <br />
-        <input type='password' placeholder='Password' value={this.state.password} onChange={this.passwordChange.bind(this)} /> <br />
-        <textarea type='textarea' id='textarea' placeholder='Tell Us About Yourself' value={this.state.bio} onChange={this.bioChange.bind(this)} /> <br />
-        <div className="checkBoxArea">
-        <div className='checkbox'><input type='checkbox' value={this.state.is_npo} onClick={this.npoChange.bind(this)} />
-        <label for="isNpo">I am a Nonprofit Organization</label></div>
+          <p>Create a new dare.</p>
+          <img src={this.props.profilepic_path}  />
+          <h1> {this.props.name} </h1> <br />
+          <textarea type='textarea' id='textarea' placeholder='Dare Title' value={this.state.dareTitle} onChange={this.dareTitleChange.bind(this)} /> <br />
+          <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
+          <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
         </div>
-        <h3 className='profilePic'>Upload Your Profile Picture <span className='required'>*required</span></h3>
-        <input type="file" id="file-input" onChange={this.imageChange.bind(this)} />
-        <input type="hidden" id="avatar-url" name="avatar-url" value={this.state.profilepic_path}/>
-        <button className='registerButton' type="submit" onClick={this.registerSubmit.bind(this)}>Sign Up</button>
-      </div>
       </div>
     );
   }
 }
+
+//expiration date not set
 
 export default NPOCreateDare;
