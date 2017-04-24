@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import '../css/tile.css';
+import ReactPlayer from 'react-player'
 
 class CompletedDaresComp extends Component {
   render() {
     const { element } = this.props
-    return (
-
-    <div className="Tile">
-        <a className="TileLink">
-        <img src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6ewSSo96Fo5SyCISYhQsmHv07iuX-8K1zc_-fXFcV5xet2J33' />
-        <h1>{element.title}</h1>
-        <p>{element.description} ...</p>
-        </a>
-    </div>
-    );
+    console.log("a;lsdkjf;alskdjf;lkasdjf", element.video_path)
+    if(element.video_path !== null){
+      return (
+        <div className="VideoTile Tile">
+          <a className="TileLink">
+            <ReactPlayer url={element.video_path} playing={false} loop={false} height="100%" width="100%" className="VideoPlayer" />
+            <h1>{element.title}</h1>
+            <p>{element.description} ...</p>
+          </a>
+      </div>
+      );
+    }
   }
 }
 export default CompletedDaresComp;

@@ -24,7 +24,7 @@ class App extends Component {
     } else if (this.state.pageMode === 'Homepage'){
       return <Homepage changePageMode={this.changePageMode.bind(this)} />
     } else if (this.state.pageMode === 'ViewDare'){
-     return <ViewDare changePageMode ={this.changePageMode.bind(this)}/>
+     return <ViewDare changePageMode={this.changePageMode.bind(this)}/>
     }
   }
   render() {
