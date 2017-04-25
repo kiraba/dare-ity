@@ -25,7 +25,7 @@ class SplashPage extends Component {
     }else if (this.state.boxMode === 'Login'){
       return <Login changePageMode={this.props.changePageMode} changeBoxMode={this.changeBoxMode.bind(this)} />
     } else if (this.state.boxMode === 'NPOCreateDare'){
-      return <NPOCreateDare changeBoxMode={this.changeBoxMode.bind(this)} />
+      return <NPOCreateDare changeBoxMode={this.changeBoxMode.bind(this)} changePageMode={this.props.changePageMode} />
     }
   }
 

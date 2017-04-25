@@ -32,18 +32,17 @@ class NPOCreateDare extends Component {
         title: this.state.dareTitle,
         description: this.state.dareDescription,
         npo_creator: this.props.id,
-        image_path: this.props.profilepic_path
-      })
-      .then(response=>response.json())
-      .then((dare) => {
-        if (dare.title) {
-          return this.changePageMode();
-        } else {
-          return dare.message;
-        }
+        image_path: this.props.profilepic_path,
+        token: this.props.token,
+        expiration: '2017-05-12',
+        pledge_threshold: 40,
+        total_pledge_amount: 20
+
       })
     })
+    .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
   }
+
 
   render() {
     return (
