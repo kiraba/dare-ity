@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import '../css/homepage.css';
 import Broadcasters from './Broadcasters';
 import HomepageMainVid from './HomepageMainVid';
+<<<<<<< HEAD
 import Dare from './Dare';
 import CompletedDares from './CompletedDares';
+=======
+import Dare from './Dare'
+import CompletedDares from './CompletedDares'
+>>>>>>> 66757979955062305e4daca04b1260408bbe818d
 
 class Homepage extends Component {
   render() {
