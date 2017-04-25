@@ -13,6 +13,11 @@ changePageMode(){
     this.props.changePageMode('Homepage')
   }
 
+  changeBoxMode(){
+    this.props.changeBoxMode('NPOCreateDare')
+  }
+
+
   loginSubmit(){
     fetch('http://fun-d-backend.herokuapp.com/api/authenticate', {
       method: 'POST',
@@ -28,6 +33,9 @@ changePageMode(){
     .then((user) => {
       this.props.login(user.name, user.token, user.id, user.is_npo, user.profilepic_path)
       if (user.token) {
+        if (user.is_npo === true) {
+          return this.changeBoxMode();
+        }
         return this.changePageMode();
       } else {
         return user.message

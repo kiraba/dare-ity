@@ -10,8 +10,8 @@ class NPOCreateDare extends Component {
 
   }
 
-  componentDidMount() {
-
+  changePageMode(){
+    this.props.changePageMode('Homepage')
   }
 
   dareDescriptionChange(e){
@@ -32,13 +32,15 @@ class NPOCreateDare extends Component {
         title: this.state.dareTitle,
         description: this.state.dareDescription,
         npo_creator: this.props.id,
-        image_path: this.props.profilepic_path
+        image_path: this.props.profilepic_path,
+        token: this.props.token,
+        expiration: '2017-05-12',
+        pledge_threshold: 40
+
       })
-    .then(response=>response.json())
-  })
-}
-
-
+    })
+    .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
+  }
 
   render() {
     return (
@@ -58,4 +60,6 @@ class NPOCreateDare extends Component {
 
 //expiration date not set
 
-export default NPOCreateDare;
+{/* <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button> */}
+
+export default User(NPOCreateDare);
