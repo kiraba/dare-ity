@@ -15,14 +15,15 @@ class Broadcasters extends Component {
       }
     })
   .then(response=>response.json())
-  .then((user) => {
-    this.setState({userBlocks: user.result});
+  .then((users) => {
+    const filteredUsers = users.result.filter(res => res.is_npo === false)
+    this.setState({userBlocks: filteredUsers});
   })
   }
   render() {
     return (
     <div className="TilesContainer">
-    {this.state.userBlocks.map((element, i) => (<BroadcasterComp element={element} key={i} />))}
+    {this.state.userBlocks.map((user, i) => (<BroadcasterComp changePageMode={this.props.changePageMode} user={user} key={i} />))}
     </div>
     );
   }

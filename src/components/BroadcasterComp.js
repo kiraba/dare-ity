@@ -3,14 +3,14 @@ import '../css/tile.css';
 
 class BroadcasterComp extends Component {
   render() {
-    const { element } = this.props
+    const { user } = this.props
     return (
 
     <div className=" BroadcastersOverlay Tile">
-        <a className="TileLink" href="#">
-        <img src={element.profilepic_path} alt={""}/>
-        <h1>@{element.name}</h1>
-        <p>{element.bio} ...</p>
+        <a className="TileLink" onClick={()=>this.props.changePageMode('UserProfile')}>
+        <img src={user.profilepic_path} alt={""}/>
+        <h1>@{user.name}</h1>
+        <p>{user.bio} ...</p>
         </a>
     </div>
     );

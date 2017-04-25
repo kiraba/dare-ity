@@ -26,7 +26,7 @@ class Homepage extends Component {
             <h1>Broadcasters <a className='InlineLink'> View All</a></h1>
           </div>
           <div className='Tiles'>
-            <Broadcasters />
+            <Broadcasters changePageMode={this.props.changePageMode} />
           </div>
           <div className='Title'>
             <h1>Completed Dares <a className='InlineLink'> View All</a></h1>
