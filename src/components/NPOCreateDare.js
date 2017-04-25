@@ -21,23 +21,23 @@ class NPOCreateDare extends Component {
   dareTitleChange(e){
     this.setState({dareTitle: e.target.value})
   }
-//
-//   dareSubmit(){
-//     fetch('http://fun-d-backend.herokuapp.com/api/create_dare', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json' //content type in mobile = accept
-//       },
-//       body: JSON.stringify({
-//         title: this.state.dareTitle,
-//         description: this.state.dareDescription,
-//         npo_creator: this.props.id,
-//         image_path: this.props.profilepic_path
-//       })
-//     .then(response=>response.json())
-//     console.log(response)
-//   })
-// }
+
+  dareSubmit(){
+    fetch('http://fun-d-backend.herokuapp.com/api/create_dare', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' //content type in mobile = accept
+      },
+      body: JSON.stringify({
+        title: this.state.dareTitle,
+        description: this.state.dareDescription,
+        npo_creator: this.props.id,
+        image_path: this.props.profilepic_path
+      })
+    .then(response=>response.json())
+  })
+}
+
 
 
   render() {
@@ -51,7 +51,7 @@ class NPOCreateDare extends Component {
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
           <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
         </div>
-      </div>
+      </div> 
     );
   }
 }
