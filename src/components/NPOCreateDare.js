@@ -7,10 +7,9 @@ class NPOCreateDare extends Component {
   state = {
     dareDescription: "",
     dareTitle: ""
-
   }
 
-  changePageMode(){
+  changePageMode() {
     this.props.changePageMode('Homepage')
   }
 
@@ -23,24 +22,25 @@ class NPOCreateDare extends Component {
   }
 
   dareSubmit(){
-    fetch('http://fun-d-backend.herokuapp.com/api/create_dare', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json' //content type in mobile = accept
-      },
-      body: JSON.stringify({
-        title: this.state.dareTitle,
-        description: this.state.dareDescription,
-        npo_creator: this.props.id,
-        image_path: this.props.profilepic_path,
-        token: this.props.token,
-        expiration: '2017-05-12',
-        pledge_threshold: 40
+   fetch('http://fun-d-backend.herokuapp.com/api/create_dare', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json' //content type in mobile = accept
+     },
+     body: JSON.stringify({
+       title: this.state.dareTitle,
+       description: this.state.dareDescription,
+       npo_creator: this.props.id,
+       image_path: this.props.profilepic_path,
+       token: this.props.token,
+       expiration: '2017-05-12',
+       pledge_threshold: 40
 
-      })
-    })
-    .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
-  }
+     })
+   })
+   .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
+ }
+
 
   render() {
     return (
@@ -53,13 +53,11 @@ class NPOCreateDare extends Component {
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
           <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
         </div>
-      </div> 
+      </div>
     );
   }
 }
 
 //expiration date not set
-
-{/* <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button> */}
 
 export default User(NPOCreateDare);

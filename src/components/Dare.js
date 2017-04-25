@@ -14,18 +14,17 @@ class Dare extends Component {
         'Content-Type': 'application/json' //content type in mobile = accept
       }
     })
-
-  .then(response=>response.json())
-  .then((dares) => {
-    this.setState({dareBlocks: dares.result});
-    console.log('dareblocks', this.state.dareBlocks)
-  })
+    .then(response=>response.json())
+    .then((dares) => {
+      this.setState({dareBlocks: dares.result});
+      console.log(dares.result)
+    })
   }
 
   render() {
     return (
     <div className="TilesContainer">
-      {this.state.dareBlocks.map((element, i) => (<DareComp element={element} key={i} />))}
+      {this.state.dareBlocks.map((element, i) => (<DareComp changePageMode={this.props.changePageMode} element={element} key={i} />))}
     </div>
     );
   }
