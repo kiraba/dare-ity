@@ -35,9 +35,6 @@ class Homepage extends Component {
           <div className='Tiles'>
             <CompletedDares />
           </div>
-          <div className='NPOCreateDare'>
-            <NPOCreateDare />
-          </div>
         </div>
       </div>
     );

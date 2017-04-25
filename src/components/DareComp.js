@@ -5,12 +5,12 @@ class DareComp extends Component {
   render() {
     var self = this;
     const { element } = this.props
+    console.log('darele', element)
     return (
 
     <div className="Tile">
         <a className="DaresOverlay TileLink" onClick={()=>self.props.changePageMode('ViewDare')}>
-        <h5 className='dareBox'>Dare Title</h5>
-
+        <img src={element.image_path} alt={""}/>
         <h1>{element.title}</h1>
         <p>{element.description} ...</p>
         </a>
