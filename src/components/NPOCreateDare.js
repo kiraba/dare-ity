@@ -35,14 +35,12 @@ class NPOCreateDare extends Component {
         image_path: this.props.profilepic_path,
         token: this.props.token,
         expiration: '2017-05-12',
-        pledge_threshold: 40,
-        total_pledge_amount: 20
+        pledge_threshold: 40
 
       })
     })
     .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
   }
-
 
   render() {
     return (
@@ -55,7 +53,7 @@ class NPOCreateDare extends Component {
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
           <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
         </div>
-      </div>
+      </div> 
     );
   }
 }

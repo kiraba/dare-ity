@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import './css/app.css';
 import Homepage from './components/Homepage';
 import SplashPage from './components/SplashPage';
-import ViewDare from './components/ViewDare';
+import DareView from './components/DareView'
+import Participate from './components/Participate'
+import UserProfile from './components/UserProfile'
 
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      pageMode: 'SplashPage'
+      pageMode: 'Homepage'
     }
   }
 
@@ -23,8 +25,12 @@ class App extends Component {
       return <SplashPage changePageMode={this.changePageMode.bind(this)}/>
     } else if (this.state.pageMode === 'Homepage'){
       return <Homepage changePageMode={this.changePageMode.bind(this)} />
-    } else if (this.state.pageMode === 'ViewDare'){
-     return <ViewDare changePageMode={this.changePageMode.bind(this)}/>
+    } else if (this.state.pageMode === 'DareView'){
+      return <DareView changePageMode={this.changePageMode.bind(this)}/>
+   } else if (this.state.pageMode === 'Participate'){
+      return <Participate changePageMode={this.changePageMode.bind(this)}/>
+    } else if (this.state.pageMode === 'UserProfile'){
+      return <UserProfile changePageMode={this.changePageMode.bind(this)}/>
     }
   }
   render() {
