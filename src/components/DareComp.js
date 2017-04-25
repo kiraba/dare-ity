@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import '../css/tile.css';
 
 class DareComp extends Component {
+
+  viewDare = () => {
+    this.props.viewDare(this.props.)
+  }
   render() {
     var self = this;
     const { element } = this.props
