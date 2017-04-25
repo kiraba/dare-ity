@@ -18,6 +18,7 @@ class Broadcasters extends Component {
   .then((users) => {
     const filteredUsers = users.result.filter(res => res.is_npo === false)
     this.setState({userBlocks: filteredUsers});
+    console.log('userBlocks', this.state.userBlocks)
   })
   }
   render() {

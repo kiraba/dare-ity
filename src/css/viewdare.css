@@ -83,6 +83,11 @@ button:focus {
   margin-top: 20px;
 }
 
+.NoBackground {
+  background-color: transparent !important;
+  margin-bottom: 75px !important;
+}
+
 .DareContent {
   padding-left: 40px;
   width: 70%;

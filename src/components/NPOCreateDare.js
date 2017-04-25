@@ -50,7 +50,7 @@ class NPOCreateDare extends Component {
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
           <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
         </div>
-      </div>
+      </div> 
     );
   }
 }

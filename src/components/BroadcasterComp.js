@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import '../css/tile.css';
+import { DisplayUser } from 'darity-state'
 
 class BroadcasterComp extends Component {
+
+  viewUser = () => {
+    this.props.viewProfile(this.props.user)
+    this.props.changePageMode('UserProfile')
+  }
+
   render() {
     const { user } = this.props
     return (
 
     <div className=" BroadcastersOverlay Tile">
-        <a className="TileLink" onClick={()=>this.props.changePageMode('UserProfile')}>
+        <a className="TileLink" onClick={this.viewUser}>
         <img src={user.profilepic_path} alt={""}/>
         <h1>@{user.name}</h1>
         <p>{user.bio} ...</p>
@@ -16,7 +23,7 @@ class BroadcasterComp extends Component {
     );
   }
 }
-export default BroadcasterComp;
+export default DisplayUser(BroadcasterComp);
 
 
 // <div className="Tile BroadcastersOverlay">
