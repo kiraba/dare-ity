@@ -5,14 +5,13 @@ import ReactPlayer from 'react-player'
 class CompletedDaresComp extends Component {
   render() {
     const { element } = this.props
-    console.log("a;lsdkjf;alskdjf;lkasdjf", element.video_path)
     if(element.video_path !== null){
       return (
-        <div className="VideoTile Tile">
+        <div className="CompletedDaresOverlay VideoTile Tile">
           <a className="TileLink">
             <ReactPlayer url={element.video_path} playing={false} loop={false} height="100%" width="100%" className="VideoPlayer" />
-            <h1>{element.title}</h1>
-            <p>{element.description} ...</p>
+            <h1>This is the title.</h1>
+            <p>Here is the lovely description. ...</p>
           </a>
       </div>
       );
