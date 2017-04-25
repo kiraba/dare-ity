@@ -7,7 +7,6 @@ class Dare extends Component {
           dareBlocks: []
         }
 
-
   componentDidMount() {
     fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_dares', {
       method: 'POST',
@@ -15,13 +14,12 @@ class Dare extends Component {
         'Content-Type': 'application/json' //content type in mobile = accept
       }
     })
+
   .then(response=>response.json())
   .then((dares) => {
     this.setState({dareBlocks: dares.result});
   })
   }
-
-
 
   render() {
     return (

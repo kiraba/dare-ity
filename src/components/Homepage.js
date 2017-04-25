@@ -28,12 +28,6 @@ class Homepage extends Component {
           <div className='Tiles'>
             <Broadcasters />
           </div>
-          <div className='Title'>
-            <h1>Completed Dares <a className='InlineLink'> View All</a></h1>
-          </div>
-          <div className='Tiles'>
-            <CompletedDares />
-          </div>
         </div>
       </div>
     );
