@@ -28,16 +28,21 @@ class UserProfile extends Component {
                 <img src={this.props.currentProfile.profilepic_path} />
               </div>
               <div className='DareContent'>
-                <h1>@{this.props.currentProfile.name}</h1><br />
+                <h2>@{this.props.currentProfile.name}</h2><br />
                 <p className='description'>{this.props.currentProfile.bio}</p>
               </div>
 
           </div>
+          <div>
+          <h2 className='DareTitle'>Dares to be Funded</h2>
+          <div className='DareBox'>
           <div className='NoBackground DareInView'>
             {this.props.currentProfile.dares.map((dare, i) => (<ActiveDares dare={dare}  key={i} />))}
           </div>
+          </div>
           <div className='NoBackground DareInView'>
             {this.props.currentProfile.dares.map((dare, i) => (<UserDares dare={dare}  key={i} />))}
+          </div>
           </div>
           </div>
     );
