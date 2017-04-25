@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import '../css/homepage.css';
 import ReactPlayer from 'react-player'
 import _ from 'lodash'
+
 class HomepageMainVid extends Component {
 
   state = {
-          compdareBlocks: [],
           video: {}
         }
 
@@ -21,7 +21,7 @@ class HomepageMainVid extends Component {
     .then((dares) => {
       const filteredDares = dares.result.filter(res => typeof res.video_path === 'string' && res.video_path)
       var rand = filteredDares[Math.floor(Math.random() * filteredDares.length)];
-      console.log(rand)
+      console.log('random dare',rand)
       this.setState({
                      video: rand ? rand : {}})
     })
@@ -31,7 +31,7 @@ class HomepageMainVid extends Component {
 
     return (
       <div className='HomepageVid'>
-        <ReactPlayer url={this.state.video.video_path} playing loop="true" height="720px" width="100%" className="VideoPlayer" />
+        <ReactPlayer url={this.state.video.video_path} playing loop={true} height="720px" width="100%" className="VideoPlayer" />
         <div className="Caption"> <div><span>{this.state.video.title}</span> <span> &nbsp; @{this.state.video.name}</span></div></div>
       </div>
 

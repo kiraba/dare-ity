@@ -26,7 +26,7 @@ changePageMode(){
     })
     .then(response=>response.json())
     .then((user) => {
-      this.props.login(user.name, user.token)
+      this.props.login(user.name, user.token, user.id, user.is_npo, user.profilepic_path)
       if (user.token) {
         return this.changePageMode();
       } else {
@@ -42,7 +42,7 @@ changePageMode(){
         <p>Login</p>
           <input type='text' placeholder='Name' value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} /> <br />
           <input type='password' placeholder='Password' value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} /> <br />
-          <button className='loginButton' type="submit" onClick={this.loginSubmit.bind(this)}>Login</button> 
+          <button className='loginButton' type="submit" onClick={this.loginSubmit.bind(this)}>Login</button>
         </div>
       </div>
     );

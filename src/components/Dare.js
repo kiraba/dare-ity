@@ -7,7 +7,6 @@ class Dare extends Component {
           dareBlocks: []
         }
 
-
   componentDidMount() {
     fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_dares', {
       method: 'POST',
@@ -21,8 +20,6 @@ class Dare extends Component {
     console.log('dareblocks', this.state.dareBlocks)
   })
   }
-
-
 
   render() {
     return (

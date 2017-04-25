@@ -8,7 +8,7 @@ class DareComp extends Component {
     return (
 
     <div className="Tile">
-        <a className="DaresOverlay TileLink" onclick={()=>self.props.changePageMode('ViewDare')}>
+        <a className="DaresOverlay TileLink" onClick={()=>self.props.changePageMode('ViewDare')}>
         <h5 className='dareBox'>Dare Title</h5>
 
         <h1>{element.title}</h1>

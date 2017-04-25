@@ -41,7 +41,3 @@ class Tile extends Component {
 export default Tile;
 
 // bio limit: 130 characters.
-
-
-
-
