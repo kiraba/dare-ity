@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import '../css/viewdare.css';
 import CompletedDares from './CompletedDares';
+import { DisplayDare } from 'darity-state';
+import { User } from 'darity-state';
+import Dare from './Dare';
+
+
 
 
 class DareView extends Component {
+
+
   render() {
     var self = this
     return (
@@ -13,14 +20,14 @@ class DareView extends Component {
             </div>
             <div className='DareInView'>
                 <div className='SquareImage'>
-                <img src='http://kpax.images.worldnow.com/images/9740996_G.jpg' />
+                <img src={this.props.currentDare.image_path} />
                 </div>
                 <div className='DareContent'>
-                <h1>Dare Title</h1>
-                <h2>NPO</h2>
-                <p className='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in aliquam neque, a vulputate urna. Nunc laoreet nunc ut nibh iaculis, in consequat justo laoreet. Sed eget volutpat neque. Sed egestas lobortis est vitae mollis. Donec nisi quam, lacinia in lacinia id, placerat eu enim.</p>
+                <h1>{this.props.currentDare.title}</h1>
+                <h2>{this.props.currentDare.name}</h2>
+                <p className='description'>{this.props.currentDare.description}</p>
                 <div className='dareButton'>
-                  <button type="button" className="button" onClick={()=>self.props.changePageMode('Participate')} >Accept Dare</button>
+                  <button type="button" className="button" onClick={() => !this.props.token ? self.props.changePageMode('SplashPage') : self.props.changePageMode('Participate')} >Accept Dare</button>
                 </div>
                 </div>
 
@@ -28,10 +35,10 @@ class DareView extends Component {
 
             <div>
               <div className='Title'>
-                <h1>View Dares <a className='InlineLink'> View All</a></h1>
+                <h1>View Other Dares</h1>
               </div>
               <div className='Tiles'>
-                <CompletedDares />
+                <Dare />
               </div>
               </div>
           </div>
@@ -39,7 +46,7 @@ class DareView extends Component {
   }
 }
 
-export default DareView;
+export default DisplayDare(User(DareView));
 // <div className="viewContainer">
 // <div className="npoLogo">
 //   <img className="nLog" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSRVPhf-wgiSEadlcLdegmcnej7P7MEjKCf0FzduW9_tWY3GLZ2" alt="" />

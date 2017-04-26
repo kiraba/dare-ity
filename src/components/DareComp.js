@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 import '../css/tile.css';
+import { DisplayDare } from 'darity-state';
 
 class DareComp extends Component {
+
+  showDare = () => {
+    this.props.viewDare(this.props.dare)
+    this.props.changePageMode('DareView')
+  }
+
   render() {
-    var self = this;
-    const { element } = this.props
+    var self = this
+    const { dare } = this.props
     return (
 
     <div className="Tile">
-        <a className="DaresOverlay TileLink" onClick={()=>self.props.changePageMode('ViewDare')}>
-        <img src={element.image_path} alt={""}/>
-        <h1>{element.title}</h1>
-        <p>{element.description} ...</p>
+        <a className="DaresOverlay TileLink" onClick={self.showDare}>
+        <h5 className='dareBox'>Dare Title</h5>
+        <img src={dare.image_path} alt={""}/>
+        <h1>{dare.title}</h1>
+        <p>{dare.description} ...</p>
         </a>
     </div>
     );
   }
 }
-export default DareComp;
+export default DisplayDare(DareComp);
 
 // 89 characters.
 

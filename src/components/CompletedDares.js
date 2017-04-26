@@ -27,16 +27,19 @@ class CompletedDares extends Component {
     })
   }
 
+
   renderCompletedDares(element, i) {
     return (
-      <CompletedDaresComp element={element} key={i} />
+      <CompletedDaresComp changePageMode={self.props.changePageMode} element={element} key={i} />
     )
   }
+
 
   render() {
     return (
       <div className="TilesContainer">
         {this.state.compdareBlocks.map((element, i) => this.renderCompletedDares(element, i))}
+
       </div>
     );
   }

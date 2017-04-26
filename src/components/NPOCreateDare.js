@@ -7,11 +7,10 @@ class NPOCreateDare extends Component {
   state = {
     dareDescription: "",
     dareTitle: ""
-
   }
 
-  componentDidMount() {
-
+  changePageMode() {
+    this.props.changePageMode('Homepage')
   }
 
   dareDescriptionChange(e){
@@ -23,20 +22,24 @@ class NPOCreateDare extends Component {
   }
 
   dareSubmit(){
-    fetch('http://fun-d-backend.herokuapp.com/api/create_dare', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json' //content type in mobile = accept
-      },
-      body: JSON.stringify({
-        title: this.state.dareTitle,
-        description: this.state.dareDescription,
-        npo_creator: this.props.id,
-        image_path: this.props.profilepic_path
-      })
-    .then(response=>response.json())
-  })
-}
+   fetch('http://fun-d-backend.herokuapp.com/api/create_dare', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json' //content type in mobile = accept
+     },
+     body: JSON.stringify({
+       title: this.state.dareTitle,
+       description: this.state.dareDescription,
+       npo_creator: this.props.id,
+       image_path: this.props.profilepic_path,
+       token: this.props.token,
+       expiration: '2017-05-12',
+       pledge_threshold: 40
+
+     })
+   })
+   .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
+ }
 
 
   render() {
@@ -49,12 +52,15 @@ class NPOCreateDare extends Component {
           <textarea type='textarea' id='textarea' placeholder='Dare Title' value={this.state.dareTitle} onChange={this.dareTitleChange.bind(this)} /> <br />
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
           <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
+          <div className="continue">
+  	         <p><a onClick={()=>this.props.changePageMode('Homepage')}>Continue To Site</a></p>
+  	      </div>
         </div>
-      </div> 
+      </div>
     );
   }
 }
 
 //expiration date not set
 
-export default NPOCreateDare;
+export default User(NPOCreateDare);

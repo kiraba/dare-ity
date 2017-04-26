@@ -5,7 +5,8 @@ import SplashPage from './components/SplashPage';
 import DareView from './components/DareView'
 import Participate from './components/Participate'
 import UserProfile from './components/UserProfile'
-import CompleteDare from './components/completeDare'
+import CompletedDares from './components/CompletedDares'
+import CompletedDareView from './components/CompletedDareView'
 
 
 class App extends Component {
@@ -32,8 +33,10 @@ class App extends Component {
       return <Participate changePageMode={this.changePageMode.bind(this)}/>
     } else if (this.state.pageMode === 'UserProfile'){
       return <UserProfile changePageMode={this.changePageMode.bind(this)}/>
-    } else if (this.state.pageMode === 'CompleteDare'){
-      return <CompleteDare changePageMode={this.changePageMode.bind(this)}/>
+    } else if (this.state.pageMode === 'CompletedDares'){
+      return <CompletedDares changePageMode={this.changePageMode.bind(this)}/>
+    } else if (this.state.pageMode === 'CompletedDareView'){
+      return <CompletedDareView changePageMode={this.changePageMode.bind(this)}/>
     }
   }
   render() {
