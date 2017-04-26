@@ -21,8 +21,17 @@
   flex-wrap: wrap;
 }
 
-.DareBox {
-  background-color: rgba(23, 87, 130, .8);
+.NoVid {
+    padding: 20px;
+    background-color: rgba(23, 87, 130, .8);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .DareTitle {
@@ -79,7 +88,6 @@
   color: white;
   text-transform: uppercase;
   background-color: rgba(14, 24, 61, .7);
-  padding: 20px;
   margin-top: 20px;
 }
 

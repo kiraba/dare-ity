@@ -82,7 +82,6 @@ button:focus {
   color: white;
   text-transform: uppercase;
   background-color: rgba(14, 24, 61, .7);
-  padding: 20px;
   margin-top: 20px;
 }
 
