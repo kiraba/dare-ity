@@ -13,25 +13,20 @@ changePageMode(){
   }
 
   participate(){
-    fetch('http://fun-d-backend.herokuapp.com/api/update_user_dare', {
+    fetch('http://fun-d-backend.herokuapp.com/api/set_user_dare', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' //content type in mobile = accept
       },
       body: JSON.stringify({
-        name: this.state.name,
-        password: this.state.password
+        broadcaster_id: this.props.id,
+  			dare_id: this.props.dare_id,
+  			npo_id: this.props.npo_id,
+  			pledge_amount_threshold: this.state.pledge_amount_threshold,
+				video_path: null,
       })
     })
-    .then(response=>response.json())
-    .then((user) => {
-      this.props.login(user.name, user.token)
-      if (user.token) {
-        return this.changePageMode();
-      } else {
-        return user.message
-      }
-    })
+    .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
   }
 
   render() {
