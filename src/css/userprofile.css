@@ -5,7 +5,6 @@
   color: white;
   text-transform: uppercase;
   /*background-color: rgb(14, 24, 61);*/
-  padding: 20px;
   margin-top: 20px;
 }
 
@@ -31,7 +30,6 @@
     color: white;
     text-transform: uppercase;
     margin-top: 20px;
-    width: 100%;
 }
 
 .DareTitle {
@@ -42,7 +40,7 @@
 .DareContent {
   margin-left: 30px;
   padding-left: 40px;
-  width: 50%;
+  min-width: 40%;
   background: rgba(4, 9, 41, 0.8);
 }
 
@@ -77,12 +75,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 10px;
-  min-width: 20%;
+  font-size: 12px;
 }
 
 .DareInView {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: stretch;
   color: white;
@@ -93,6 +91,7 @@
 
 .SquareImage {
   max-width: 250px;
+  min-width: 250px;
   height: 250px;
   overflow: hidden;
   display: flex;
@@ -128,6 +127,9 @@
     max-width: 150px;
     height: 160px;
   }
+  h2 {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -135,6 +137,7 @@
     margin-left: 10px;
     padding-left: 10px;
     width: 50%;
+    padding-right: 20px;
   }
   .UserDareVid {
     width: 400px;
@@ -143,5 +146,11 @@
     min-width: 120px;
     max-width: 120px;
     height: 140px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 12px;
   }
 }

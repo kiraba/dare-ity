@@ -6,7 +6,6 @@ class userDares extends Component {
   render() {
     const { dare } = this.props
     console.log('dare', dare)
-    if(dare.video_path !== null){
       return (
         <div>
         <div className='UserDareVid'>
@@ -17,9 +16,6 @@ class userDares extends Component {
             </div>
         </div>
       );
-    } else {
-      return <div></div>
-    }
   }
 }
 export default userDares;

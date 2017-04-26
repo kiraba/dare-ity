@@ -28,7 +28,7 @@ class CompletedDares extends Component {
   }
 
 
-  renderCompletedDares(element, i) {
+  renderCompletedDares(dare, i) {
     return (
       <CompletedDaresComp changePageMode={self.props.changePageMode} dare={dare} key={i} />
     )
