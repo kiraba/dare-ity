@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import '../css/viewdare.css';
 import CompletedDares from './CompletedDares';
 import { DisplayDare } from 'darity-state';
+import { User } from 'darity-state';
+
 
 
 class DareView extends Component {
 
-  agreeToDare
 
   render() {
     var self = this
@@ -24,7 +25,7 @@ class DareView extends Component {
                 <h2>{this.props.currentDare.name}</h2>
                 <p className='description'>{this.props.currentDare.description}</p>
                 <div className='dareButton'>
-                  <button type="button" className="button" onClick={()=>self.props.changePageMode('Participate')} >Accept Dare</button>
+                  <button type="button" className="button" onClick={() => !this.props.token ? self.props.changePageMode('SplashPage') : self.props.changePageMode('Participate')} >Accept Dare</button>
                 </div>
                 </div>
 
@@ -43,7 +44,7 @@ class DareView extends Component {
   }
 }
 
-export default DisplayDare(DareView);
+export default DisplayDare(User(DareView));
 // <div className="viewContainer">
 // <div className="npoLogo">
 //   <img className="nLog" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSRVPhf-wgiSEadlcLdegmcnej7P7MEjKCf0FzduW9_tWY3GLZ2" alt="" />
