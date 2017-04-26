@@ -11,10 +11,10 @@ class userDares extends Component {
     if(dare.video_path !== null){
       return (
         <div>
-        <h1>Completed Dares</h1>
+        <h2>Completed Dares</h2>
         <div className='UserDareVid'>
               <ReactPlayer url={dare.video_path} playing={false} loop={false} height="100%" width="100%" className="VideoPlayer" />
-              <div className="Caption"> <div><span>Title</span> <span> &nbsp; @NPO</span></div></div>
+              <div className="Caption"> <div><span>{dare.title}</span> <span> &nbsp; @{dare.npo_name}</span></div></div>
             </div>
         </div>
       );
