@@ -35,7 +35,6 @@ class CompletedDares extends Component {
   // }
 
   render() {
-    console.log(this.props.changePageMode)
     return (
       <div className="TilesContainer">
       {this.state.compdareBlocks.map((dare, i) => (<CompletedDaresComp changePageMode={this.props.changePageMode} dare={dare} key={i} />))}
