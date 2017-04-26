@@ -42,6 +42,9 @@ p {
   padding-top: 20px;
 }
 
+ .DareBox {
+   background-color: rgba(14, 24, 61, .5);
+ }
 
 .button {
   font-weight: 500;
@@ -88,10 +91,7 @@ button:focus {
   margin-bottom: 75px !important;
 }
 
-.DareContent {
-  padding-left: 40px;
-  width: 70%;
-}
+
 
 .DareContent h1 {
   line-height: .001em;

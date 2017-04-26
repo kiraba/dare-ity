@@ -15,8 +15,7 @@ class DareComp extends Component {
     return (
 
     <div className="Tile">
-        <a className="DaresOverlay TileLink" onClick={self.showDare}>
-        <h5 className='dareBox'>Dare Title</h5>
+        <a className="DaresOverlay TileLink" onClick={()=>self.props.changePageMode('ViewDare')}>
         <img src={element.image_path} alt={""}/>
         <h1>{element.title}</h1>
         <p>{element.description} ...</p>

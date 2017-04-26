@@ -1,0 +1,38 @@
+.UserBio {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  color: white;
+  text-transform: uppercase;
+  /*background-color: rgb(14, 24, 61);*/
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.ActiveDareBox {
+  background-color: transparent;
+  padding: 50px 20px;
+
+}
+
+.Container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.DareBox {
+  background-color: rgb(23, 87, 130);
+}
+
+.DareTitle {
+  color: white;
+  justify-content: flex-start;
+}
+
+.DareContent {
+  margin-left: 30px;
+  padding-left: 40px;
+  width: 40%;
+  background: rgba(4, 9, 41, 0.7);
+}
