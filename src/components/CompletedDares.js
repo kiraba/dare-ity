@@ -30,7 +30,7 @@ class CompletedDares extends Component {
 
   renderCompletedDares(element, i) {
     return (
-      <CompletedDaresComp changePageMode={self.props.changePageMode} element={element} key={i} />
+      <CompletedDaresComp changePageMode={self.props.changePageMode} dare={dare} key={i} />
     )
   }
 
@@ -38,7 +38,7 @@ class CompletedDares extends Component {
   render() {
     return (
       <div className="TilesContainer">
-        {this.state.compdareBlocks.map((element, i) => this.renderCompletedDares(element, i))}
+        {this.state.compdareBlocks.map((dare, i) => this.renderCompletedDares(dare, i))}
 
       </div>
     );
