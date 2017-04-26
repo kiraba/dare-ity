@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import '../css/viewdare.css';
 import CompletedDares from './CompletedDares';
-//import { User } from 'darity-state';
 import { DisplayDare } from 'darity-state';
 
 
 class DareView extends Component {
+
+  agreeToDare
+
   render() {
     var self = this
     return (

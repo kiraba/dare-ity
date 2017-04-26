@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import {User} from 'darity-state';
 import 'whatwg-fetch';
 import '../css/app.css';
+import { DisplayDare } from 'darity-state';
 
 class Participate extends Component {
   state = {
-            threshold: null,
+            threshold: '',
           }
 
 changePageMode(){
@@ -20,9 +21,10 @@ changePageMode(){
       },
       body: JSON.stringify({
         broadcaster_id: this.props.id,
-  			dare_id: this.props.dare_id,
-  			npo_id: this.props.npo_id,
-  			pledge_amount_threshold: this.state.pledge_amount_threshold,
+  			dare_id: this.props.currentDare.id,
+  			npo_id: this.props.currentDare.npo_id,
+  			pledge_amount_threshold: this.state.threshold,
+        token: this.props.token,
 				video_path: null,
       })
     })
@@ -45,4 +47,4 @@ changePageMode(){
   }
 }
 
-export default Participate;
+export default DisplayDare(User(Participate));
