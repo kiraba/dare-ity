@@ -19,19 +19,19 @@ class Homepage extends Component {
               <HomepageMainVid />
           </div>
           <div className='Title'>
-            <h1>Active Dares <a className='InlineLink'> View All</a></h1>
+            <h1>Active Dares</h1>
           </div>
           <div className='Tiles'>
             <Dare changePageMode={this.props.changePageMode}/>
           </div>
           <div className='Title'>
-            <h1>Broadcasters <a className='InlineLink'> View All</a></h1>
+            <h1>Broadcasters</h1>
           </div>
           <div className='Tiles'>
             <Broadcasters changePageMode={this.props.changePageMode} />
           </div>
           <div className='Title'>
-            <h1>Completed Dares <a className='InlineLink'> View All</a></h1>
+            <h1>Completed Dares</h1>
           </div>
           <div className='Tiles'>
             <CompletedDares />
