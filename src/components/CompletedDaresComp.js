@@ -5,7 +5,6 @@ import ReactPlayer from 'react-player'
 class CompletedDaresComp extends Component {
   render() {
     const { element } = this.props
-    console.log('vid', element)
     if(element.video_path !== null){
       return (
         <div className="CompletedDaresOverlay VideoTile Tile">

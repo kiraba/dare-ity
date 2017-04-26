@@ -15,9 +15,19 @@ class UserProfile extends Component {
 
           }
 
+      dareExist () {
+        if(this.props.currentProfile.dares.length > 0){
+          return this.props.currentProfile.dares
+                    .filter(dare => !dare.video_path)
+                    .map((dare, i) => (<ActiveDares dare={dare}  key={i} />))
+        } else {
+          return <div> {this.props.currentProfile.name} does now have any active dares. </div>
+        }
+      }
 
   render() {
       console.log('props', this.props)
+
     return (
       <div className="SafeArea">
           <div className='Header'>
@@ -37,7 +47,7 @@ class UserProfile extends Component {
           <h2 className='DareTitle'>Dares to be Funded</h2>
           <div className='DareBox'>
           <div className='NoBackground DareInView'>
-            {this.props.currentProfile.dares.map((dare, i) => (<ActiveDares dare={dare}  key={i} />))}
+            {this.dareExist()}
           </div>
           </div>
           <div className='NoBackground DareInView'>

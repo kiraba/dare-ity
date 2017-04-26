@@ -5,7 +5,6 @@ class DareComp extends Component {
   render() {
     var self = this;
     const { element } = this.props
-    console.log('darele', element)
     return (
 
     <div className="Tile">

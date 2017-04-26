@@ -21,7 +21,6 @@ class HomepageMainVid extends Component {
     .then((dares) => {
       const filteredDares = dares.result.filter(res => typeof res.video_path === 'string' && res.video_path)
       var rand = filteredDares[Math.floor(Math.random() * filteredDares.length)];
-      console.log('random dare',rand)
       this.setState({
                      video: rand ? rand : {}})
     })
