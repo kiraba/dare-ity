@@ -27,16 +27,16 @@ class CompletedDares extends Component {
     })
   }
 
-  renderCompletedDares(element) {
+  renderCompletedDares(element, i) {
     return (
-      <CompletedDaresComp element={element} key={element.id} />
+      <CompletedDaresComp element={element} key={i} />
     )
   }
 
   render() {
     return (
       <div className="TilesContainer">
-        {this.state.compdareBlocks.map(this.renderCompletedDares)}
+        {this.state.compdareBlocks.map((element, i) => this.renderCompletedDares(element, i))}
       </div>
     );
   }
