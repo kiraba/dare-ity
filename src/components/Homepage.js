@@ -6,6 +6,7 @@ import Dare from './Dare'
 import CompletedDares from './CompletedDares'
 import NPOCreateDare from './NPOCreateDare'
 
+
 class Homepage extends Component {
   render() {
     return (

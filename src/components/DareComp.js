@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import '../css/tile.css';
+import { DisplayDare } from 'darity-state';
 
 class DareComp extends Component {
+
+  showDare = () => {
+    this.props.viewDare(this.props.dare)
+    this.props.changePageMode('DareView')
+  }
+
   render() {
-    var self = this;
+    var self = this
     const { element } = this.props
     return (
 
@@ -17,7 +24,7 @@ class DareComp extends Component {
     );
   }
 }
-export default DareComp;
+export default DisplayDare(DareComp);
 
 // 89 characters.
 
