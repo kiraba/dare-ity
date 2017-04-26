@@ -3,6 +3,7 @@ import '../css/viewdare.css';
 import CompletedDares from './CompletedDares';
 import { DisplayDare } from 'darity-state';
 import { User } from 'darity-state';
+import CompletedDareVid from './CompletedDareVid';
 
 
 
@@ -17,7 +18,7 @@ class CompletedDareView extends Component {
               <h1>FUN(d)</h1>
             </div>
             <div className="Video">
-              <HomepageMainVid />
+              <CompletedDareVid />
             </div>
             <div className='DareInView'>
                 <div className='SquareImage'>
@@ -27,19 +28,16 @@ class CompletedDareView extends Component {
                 <h1>{this.props.currentDare.title}</h1>
                 <h2>{this.props.currentDare.name}</h2>
                 <p className='description'>{this.props.currentDare.description}</p>
-                <div className='dareButton'>
-                  <button type="button" className="button" onClick={() => !this.props.token ? self.props.changePageMode('SplashPage') : self.props.changePageMode('Participate')} >Accept Dare</button>
-                </div>
                 </div>
 
             </div>
 
             <div>
               <div className='Title'>
-                <h1>View Dares <a className='InlineLink'> View All</a></h1>
+                <h1>View Dares</h1>
               </div>
               <div className='Tiles'>
-                <CompletedDares />
+                <CompletedDares changePageMode={this.props.changePageMode}/>
               </div>
               </div>
           </div>

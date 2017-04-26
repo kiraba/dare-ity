@@ -34,7 +34,7 @@ class Homepage extends Component {
             <h1>Completed Dares</h1>
           </div>
           <div className='Tiles'>
-            <CompletedDares />
+            <CompletedDares changePageMode={this.props.changePageMode}/>
           </div>
         </div>
       </div>

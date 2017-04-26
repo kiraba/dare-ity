@@ -11,7 +11,7 @@ class CompletedDareVid extends Component {
     return (
       <div className='HomepageVid'>
         <ReactPlayer url={this.props.currentDare.video_path} playing loop={true} height="720px" width="100%" className="VideoPlayer" />
-        <div className="Caption"> <div><span>{this.props.currentDare.}</span> <span> &nbsp; @{this.props.broadcaster_id}</span></div></div>
+        <div className="Caption"> <div><span>{this.props.currentDare.title}</span> <span> &nbsp; @{this.props.currentDare.name}</span></div></div>
       </div>
     );
   }
