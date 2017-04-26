@@ -16,12 +16,13 @@ class UserProfile extends Component {
           }
 
       dareExist () {
-        if(this.props.currentProfile.dares.length > 0){
-          return this.props.currentProfile.dares
-                    .filter(dare => !dare.video_path)
-                    .map((dare, i) => (<ActiveDares dare={dare}  key={i} />))
+        const activeDares = this.props.currentProfile.dares
+              .filter(dare => !dare.video_path)
+        if(activeDares.length > 0){
+              return activeDares
+                    .map((dare, i) => (<ActiveDares  changePageMode={this.props.changePageMode} dare={dare}  key={i} />))
         } else {
-          return <div> {this.props.currentProfile.name} does now have any active dares. </div>
+          return <div> {this.props.currentProfile.name} does not have any active dares. </div>
         }
       }
 
