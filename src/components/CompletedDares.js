@@ -27,17 +27,19 @@ class CompletedDares extends Component {
     })
   }
 
-  // renderCompletedDares(dare) {
-  //   var self = this;
-  //   return (
-  //     <CompletedDaresComp changePageMode={self.props.changePageMode} dare={dare} key={dare.id} />
-  //   )
-  // }
+
+  renderCompletedDares(element, i) {
+    return (
+      <CompletedDaresComp changePageMode={self.props.changePageMode} dare={dare} key={i} />
+    )
+  }
+
 
   render() {
     return (
       <div className="TilesContainer">
-      {this.state.compdareBlocks.map((dare, i) => (<CompletedDaresComp changePageMode={this.props.changePageMode} dare={dare} key={i} />))}
+        {this.state.compdareBlocks.map((dare, i) => this.renderCompletedDares(dare, i))}
+
       </div>
     );
   }

@@ -22,7 +22,7 @@
 }
 
 .DareBox {
-  background-color: rgb(23, 87, 130);
+  background-color: rgba(23, 87, 130, .8);
 }
 
 .DareTitle {
@@ -33,6 +33,107 @@
 .DareContent {
   margin-left: 30px;
   padding-left: 40px;
-  width: 40%;
-  background: rgba(4, 9, 41, 0.7);
+  width: 50%;
+  background: rgba(4, 9, 41, 0.8);
+}
+
+.UserDareVid {
+  align-self: center;
+  padding: 20px;
+  padding-bottom: 40px;
+  width: 350px;
+  min-height: 100%;
+  max-height: 100%;
+  background-color: white;
+  color: #595959;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+
+.videoHolder {
+  display: flex;
+  justify-content: center;
+}
+
+.Caption {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Caption > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+  min-width: 20%;
+}
+
+.DareInView {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(14, 24, 61, .7);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.SquareImage {
+  max-width: 250px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 3;
+}
+
+.SquareImage img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    margin: auto;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    border: solid 1em white;
+
+}
+
+
+
+@media only screen and (max-width: 700px) {
+  .DareContent {
+    margin-left: 20px;
+    padding-left: 20px;
+    width: 70%;
+  }
+  .UserDareVid {
+    width: 500px;
+  }
+  .SquareImage {
+    min-width: 150px;
+    max-width: 150px;
+    height: 160px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .DareContent {
+    margin-left: 10px;
+    padding-left: 10px;
+    width: 50%;
+  }
+  .UserDareVid {
+    width: 400px;
+  }
+  .SquareImage {
+    min-width: 120px;
+    max-width: 120px;
+    height: 140px;
+  }
 }
