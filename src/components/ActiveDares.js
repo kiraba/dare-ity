@@ -15,26 +15,12 @@ class ActiveDares extends Component {
     totalAmount: 0
   }
 
-  // componentDidMount() {
-  //   fetch('http://fun-d-backend.herokuapp.com/api/fetch_all_dares', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json' //content type in mobile = accept
-  //     }
-  //   })
-  // .then(response=>response.json())
-  // .then((dares) => {
-  //   this.setState({dareBlocks: dares.result});
-  // })
-  // }
-
   completeDareButton = () => {
     this.props.viewDare(this.props.dare);
     this.props.changePageMode('CompleteDare');
   }
 
   personalAccount () {
-    console.log('tessssssttttttttt', this.props)
     if ( this.props.id === this.props.currentProfile.id) {
       return <button className='completeDare' type="submit" onClick={this.completeDareButton}>Complete Dare</button>
     } else {
