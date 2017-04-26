@@ -11,6 +11,7 @@ class CompletedDaresComp extends Component {
   }
 
   render() {
+    console.log('hhehehhehkejkdsjfkdjasfoi')
     var self = this;
     console.log(self.props)
     const { dare } = this.props
