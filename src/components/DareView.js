@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/viewdare.css';
 import CompletedDares from './CompletedDares';
+//import { User } from 'darity-state';
+import { DisplayDare } from 'darity-state';
 
 
 class DareView extends Component {
@@ -13,12 +15,12 @@ class DareView extends Component {
             </div>
             <div className='DareInView'>
                 <div className='SquareImage'>
-                <img src='http://kpax.images.worldnow.com/images/9740996_G.jpg' />
+                <img src={this.props.currentDare.image_path} />
                 </div>
                 <div className='DareContent'>
-                <h1>Dare Title</h1>
-                <h2>NPO</h2>
-                <p className='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in aliquam neque, a vulputate urna. Nunc laoreet nunc ut nibh iaculis, in consequat justo laoreet. Sed eget volutpat neque. Sed egestas lobortis est vitae mollis. Donec nisi quam, lacinia in lacinia id, placerat eu enim.</p>
+                <h1>{this.props.currentDare.title}</h1>
+                <h2>{this.props.currentDare.name}</h2>
+                <p className='description'>{this.props.currentDare.description}</p>
                 <div className='dareButton'>
                   <button type="button" className="button" onClick={()=>self.props.changePageMode('Participate')} >Accept Dare</button>
                 </div>
@@ -39,7 +41,7 @@ class DareView extends Component {
   }
 }
 
-export default DareView;
+export default DisplayDare(DareView);
 // <div className="viewContainer">
 // <div className="npoLogo">
 //   <img className="nLog" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSRVPhf-wgiSEadlcLdegmcnej7P7MEjKCf0FzduW9_tWY3GLZ2" alt="" />
