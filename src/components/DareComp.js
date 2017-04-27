@@ -20,7 +20,7 @@ class DareComp extends Component {
         <h5 className='dareBox'>Dare Title</h5>
         <img src={dare.image_path} alt={""}/>
         <h1>{dare.title}</h1>
-        <p>{dare.description} ...</p>
+        <p>{dare.description}</p>
         </a>
     </div>
     );

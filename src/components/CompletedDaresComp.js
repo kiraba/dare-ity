@@ -19,7 +19,7 @@ class CompletedDaresComp extends Component {
           <a className="TileLink">
             <ReactPlayer url={dare.video_path} playing={false} loop={false} height="100%" width="100%" className="VideoPlayer" />
             <h1>{dare.title}</h1>
-            <p>{dare.description} ...</p>
+            <p>{dare.description}</p>
           </a>
       </div>
       );

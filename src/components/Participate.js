@@ -22,7 +22,7 @@ changePageMode(){
       },
       body: JSON.stringify({
         broadcaster_id: this.props.id,
-  			dare_id: this.props.currentDare.id,
+  			dare_id: this.props.currentDare.dare_id,
   			npo_id: this.props.currentDare.npo_creator,
   			pledge_amount_threshold: this.state.threshold,
         token: this.props.token

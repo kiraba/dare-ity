@@ -47,7 +47,7 @@ class NPOCreateDare extends Component {
       <div className='textAreaBox'>
 	      <div>
           <p>Create a new dare.</p>
-          <img src={this.props.profilepic_path}  />
+          <img className='SquareImage' src={this.props.profilepic_path}  />
           <h1> {this.props.name} </h1> <br />
           <textarea type='textarea' id='textarea' placeholder='Dare Title' value={this.state.dareTitle} onChange={this.dareTitleChange.bind(this)} /> <br />
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
