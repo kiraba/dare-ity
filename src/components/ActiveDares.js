@@ -44,7 +44,7 @@ class ActiveDares extends Component {
     if ( this.props.id === _.get(this, "props.currentProfile.id", "")){
       return <button className='completeDare' type="submit" onClick={this.completeDareButton}>Complete Dare</button>
     } else {
-      return <PledgeButton  currentDare={this.props.viewDare(dare)}/>
+      return <PledgeButton {...this.props} currentDare={this.props.viewDare(dare)}/>
     }
   }
 
