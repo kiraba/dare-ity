@@ -16,6 +16,7 @@ import CompletedDareView from './components/CompletedDareView';
 import Login from './components/Login';
 import SignUp from './components/signUp';
 import NPOCreateDare from './components/NPOCreateDare';
+import ActiveDares from './components/ActiveDares'
 import './index.css';
 import {store} from 'darity-state';
 import {Provider} from 'react-redux';
@@ -34,6 +35,7 @@ ReactDOM.render((
         <Route path="/login" component={Login}/>
         <Route path="/signup" component={SignUp}/>
         <Route path="/npocreatedare" component={NPOCreateDare}/>
+        <Route path="/donate/:userDareId" component={ActiveDares} />
       </div>
   	</Router>
   </Provider>
