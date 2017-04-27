@@ -20,17 +20,7 @@ class CompletedDareView extends Component {
             <div className="Video">
               <CompletedDareVid />
             </div>
-            <div className='DareInView'>
-                <div className='SquareImage'>
-                <img src={this.props.currentDare.image_path} />
-                </div>
-                <div className='DareContent'>
-                <h1>{this.props.currentDare.title}</h1>
-                <h2>{this.props.currentDare.name}</h2>
-                <p className='description'>{this.props.currentDare.description}</p>
-                </div>
-
-            </div>
+            
 
             <div>
               <div className='Title'>

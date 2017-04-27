@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/app.css';
+import '../css/splash.css';
 import {User} from 'darity-state';
 import 'whatwg-fetch';
 

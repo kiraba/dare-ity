@@ -1,3 +1,9 @@
+h2 {
+  font-size: 20px !important;
+}
+p {
+  font-size: 13px !important;
+}
 .UserBio {
   display: flex;
   justify-content: flex-start;
@@ -8,28 +14,31 @@
   margin-top: 20px;
 }
 
-.ActiveDareBox {
-  background-color: transparent;
-  padding: 50px 20px;
+.NoVid {
+  display: flex;
+  justify-content: flex-start;
+}
 
+.ActiveDareBox {
+  background-color: rgba(4, 9, 41, 0.8);
+  padding: 20px 20px;
+  width: 325px;
+  height: 325px;
+
+}
+
+.description {
+  max-height: 70px;
+  overflow: auto;
+  scrollbar-base-color: white;
+  margin: 10px;
 }
 
 .Container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-
-.NoVid {
-    padding: 20px;
-    background-color: rgba(23, 87, 130, .8);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: stretch;
-    color: white;
-    text-transform: uppercase;
-    margin-top: 20px;
+  border: solid 20px white;
 }
 
 .DareTitle {
@@ -41,7 +50,15 @@
   margin-left: 30px;
   padding-left: 40px;
   min-width: 40%;
-  background: rgba(4, 9, 41, 0.8);
+  background: rgba(23, 87, 130, .8);
+}
+
+.DareDes{
+  margin-left: 30px;
+  padding-top: 20px;
+  padding-left: 40px;
+  min-width: 40%;
+  background: rgba(23, 87, 130, .8);
 }
 
 .UserDareVid {
@@ -111,7 +128,9 @@
 
 }
 
-
+.amountRaised {
+  padding-top: 20px;
+}
 
 @media only screen and (max-width: 700px) {
   .DareContent {

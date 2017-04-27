@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/app.css';
+import '../css/splash.css';
 import Splash from './splash';
 import SignUp from './signUp';
 import Login from './Login';
