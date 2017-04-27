@@ -5,6 +5,7 @@ import { DisplayDare } from 'darity-state';
 class DareComp extends Component {
 
   showDare = () => {
+    console.log('here', this.props.dare)
     this.props.viewDare(this.props.dare)
     this.props.changePageMode('DareView')
   }

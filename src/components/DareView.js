@@ -12,6 +12,7 @@ class DareView extends Component {
 
 
   render() {
+    console.log('dareview', this.props)
     var self = this
     return (
         <div className="SafeArea">

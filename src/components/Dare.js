@@ -14,13 +14,13 @@ class Dare extends Component {
         'Content-Type': 'application/json' //content type in mobile = accept
       }
     })
-    
+
   .then(response=>response.json())
   .then((dares) => {
     this.setState({dareBlocks: dares.result});
   })
 
-    
+
   }
 
   render() {

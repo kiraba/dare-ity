@@ -14,7 +14,7 @@ changePageMode(){
   }
 
   participate(){
-    console.log(this.props)
+    console.log('looking', this.props)
     fetch('http://fun-d-backend.herokuapp.com/api/set_user_dare', {
       method: 'POST',
       headers: {

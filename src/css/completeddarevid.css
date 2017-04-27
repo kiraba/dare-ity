@@ -1,0 +1,35 @@
+.thumbnail {
+  height: 60px;
+  width: 60px;
+  border: none;
+  filter: grayscale(100%);
+  margin: 0px;
+  margin-left: 2px;
+}
+
+.Caption {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.Caption > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+  min-width: 100%;
+}
+
+.alignbottom {
+  align-self: flex-end;
+}
+
+img {
+  vertical-align: middle;
+}
+
+span {
+  align-self: flex-end;
+  font-size: 20px !important;
+}
