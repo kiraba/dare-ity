@@ -26,7 +26,7 @@ class UserProfile extends Component {
               .filter(dare => !dare.video_path)
         if(activeDares.length > 0){
               return activeDares
-                    .map((dare, i) => (<ActiveDares {...this.props }currentDare={dare}  key={i} />))
+                    .map((dare, i) => (<ActiveDares {...this.props } dare={dare}  key={i} />))
         } else {
           return <div className='NoVid'><div> @{this.props.currentProfile.name} does not have any active dares. </div></div>
         }
@@ -49,7 +49,7 @@ class UserProfile extends Component {
       <div className="SafeArea">
           <div className='Header'>
             <h1>FUN(d)</h1>
-      
+
           </div>
           <div className='UserBio'>
               <div className='SquareImage'>

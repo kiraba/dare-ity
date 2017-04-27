@@ -34,39 +34,43 @@ class ActiveDares extends Component {
   }
 
   completeDareButton = () => {
-    this.props.viewDare(this.props.currentDare);
+    const dare = this.props.dare || this.props.currentDare || {}
+    this.props.viewDare(dare);
     this.props.history.push('/completeddares');
   }
 
   personalAccount () {
+    const dare = this.props.dare || this.props.currentDare || {}
     if ( this.props.id === _.get(this, "props.currentProfile.id", "")){
       return <button className='completeDare' type="submit" onClick={this.completeDareButton}>Complete Dare</button>
     } else {
-      return <PledgeButton  currentDare={this.props.viewDare(this.props.currentDare)}/>
+      return <PledgeButton  currentDare={this.props.viewDare(dare)}/>
     }
   }
 
   total_pledges () {
-    if (!_.get(this, 'props.currentDare.total_pledges', false)){
+    const dare = this.props.dare || this.props.currentDare || {}
+    if (!dare.total_pledges){
       return <span>$0</span>
     } else {
-      return this.props.currentDare.total_pledges
+      return dare.total_pledges
     }
   }
 
   render() {
+    const dare = this.props.dare || this.props.currentDare || {}
     return (
       <div>
       <div className='Container'>
       <div className='ActiveDareBox'>
-      <h2>{_.get(this, 'props.currentDare.title', '')}</h2>
+      <h2>{dare.title}</h2>
       <div className='description'>
-      <p>{_.get(this, 'props.currentDare.description', '')} </p>
+      <p>{dare.description} </p>
       </div>
-      <p>Donate to this dare: </p>
+
       {this.personalAccount()}
       <div>
-      <p className='amountRaised'>Amount raised: {this.total_pledges()} of {_.get(this, 'props.currentDare.pledge_amount_threshold')} </p>
+      <p className='amountRaised'>Amount raised: {this.total_pledges()} of {dare.pledge_amount_threshold} </p>
       </div>
       </div>
       </div>
