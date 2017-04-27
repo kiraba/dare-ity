@@ -17,7 +17,6 @@ class App extends Component {
     }
   }
 
-
   changePageMode(pageMode){
     this.setState({pageMode: pageMode});
   }

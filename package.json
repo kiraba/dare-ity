@@ -12,6 +12,7 @@
     "react-popup": "^0.6.0",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "react-stripe-checkout": "^2.2.5",
     "redux": "^3.6.0",
     "whatwg-fetch": "^2.0.3"
