@@ -52,7 +52,7 @@ class TakeMoney extends React.Component {
     return (
       <StripeCheckout
         token={this.onToken}
-        stripeKey="pk_test_O127XMYBkWs2vpiyD7G9bS2g"
+        stripeKey="pk_test_v6QLSEz0D56yn11jXluFUZM7"
         amount={(this.props.amount)*100}
         >
         <button className="btn-primary">

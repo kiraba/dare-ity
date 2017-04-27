@@ -35,11 +35,12 @@ class SplashPage extends Component {
       <div>
         <div className="video-background">
           <div className="video-foreground">
-          </div>
+          <iframe src="https://www.youtube.com/embed/yQwgyG7VT1I?controls=0&showinfo=0&rel=0&autoplay=1&loop=1" frameBorder="0" allowFullScreen></iframe>
         </div>
         <div className='overlayArea'>
           {this.boxMode()}
         </div>
+      </div>
       </div>
 
     );
