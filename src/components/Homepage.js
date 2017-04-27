@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../css/homepage.css';
 import Broadcasters from './Broadcasters';
 import HomepageMainVid from './HomepageMainVid';
@@ -13,7 +14,7 @@ class Homepage extends Component {
       <div className="HomePage">
         <div className="SafeArea">
           <div className='Header'>
-            <h1>FUN(d)</h1>
+            <h1><Link to='/homepage'>FUN(d)</Link></h1>
           </div>
           <div className="Video">
               <HomepageMainVid />
