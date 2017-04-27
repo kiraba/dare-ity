@@ -28,7 +28,7 @@ ReactDOM.render((
         <Route path="/homepage" component={Homepage}/>
         <Route path="/dareview" component={DareView}/>
         <Route path="/participate" component={Participate}/>
-        <Route path="/userprofile" component={UserProfile}/>
+        <Route path="/userprofile/:userId?" component={UserProfile}/>
         <Route path="/completeddares" component={CompletedDares}/>
         <Route path="/completeddareview" component={CompletedDareView}/>
         <Route path="/login" component={Login}/>

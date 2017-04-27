@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import { User } from 'darity-state';
-// import '../css/tile.css';
 import { DisplayUser } from 'darity-state'
-// import '../css/viewdare.css';
 import UserDares from './userDares'
 import ActiveDares from './ActiveDares'
 import 'whatwg-fetch';
+import _ from 'lodash'
 
 import '../css/userprofile.css'
 
 class UserProfile extends Component {
 
-    state = {
+    state = {}
 
-          }
+    componentWillMount(){
+      const id = _.get(this, 'props.match.params.userId')
+      if (id){
+        fetch('http://fun-d-backend.herokuapp.com/api/fetch_user/' + id)
+        .then(results => results.json())
+        .then(user => this.props.viewProfile(user.result[0]))
+      }
+    }
 
       dareExist () {
-        const activeDares = this.props.currentProfile.dares
+        const activeDares = _.get(this, 'props.currentProfile.dares', [])
               .filter(dare => !dare.video_path)
         if(activeDares.length > 0){
               return activeDares
@@ -26,7 +32,7 @@ class UserProfile extends Component {
         }
       }
       completeExist () {
-        const dareVid = this.props.currentProfile.dares
+        const dareVid = _.get(this, 'props.currentProfile.dares', [])
               .filter(dare => dare.video_path)
         if(dareVid.length > 0){
               return dareVid
@@ -43,6 +49,7 @@ class UserProfile extends Component {
       <div className="SafeArea">
           <div className='Header'>
             <h1>FUN(d)</h1>
+      
           </div>
           <div className='UserBio'>
               <div className='SquareImage'>
