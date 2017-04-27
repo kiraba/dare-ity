@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import { User } from 'darity-state';
 import { DisplayUser } from 'darity-state'
 import UserDares from './userDares'
@@ -48,7 +49,7 @@ class UserProfile extends Component {
     return (
       <div className="SafeArea">
           <div className='Header'>
-            <h1>FUN(d)</h1>
+            <h1><Link to='/homepage'>FUN(d)</Link></h1>
 
           </div>
           <div className='UserBio'>
