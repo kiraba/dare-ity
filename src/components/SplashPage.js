@@ -19,13 +19,13 @@ class SplashPage extends Component {
 
   boxMode(){
     if(this.state.boxMode === 'Splash'){
-      return <Splash changeBoxMode={this.changeBoxMode.bind(this)} changePageMode={this.props.changePageMode}/>
+      return <Splash changeBoxMode={this.changeBoxMode.bind(this)}/>
     } else if (this.state.boxMode === 'SignUp'){
       return <SignUp changeBoxMode={this.changeBoxMode.bind(this)} />
     }else if (this.state.boxMode === 'Login'){
-      return <Login changePageMode={this.props.changePageMode} changeBoxMode={this.changeBoxMode.bind(this)} />
+      return <Login changeBoxMode={this.changeBoxMode.bind(this)} />
     } else if (this.state.boxMode === 'NPOCreateDare'){
-      return <NPOCreateDare changeBoxMode={this.changeBoxMode.bind(this)} changePageMode={this.props.changePageMode} />
+      return <NPOCreateDare changeBoxMode={this.changeBoxMode.bind(this)} />
     }
   }
 

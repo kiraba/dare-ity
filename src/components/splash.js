@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 import '../css/app.css';
 
 class Splash extends Component {
@@ -7,21 +12,14 @@ class Splash extends Component {
     return (
       <div className='textAreaBox'>
 	      <div>
-	      <p><span className='login'><a onClick={()=>self.props.changeBoxMode('Login')}>Login</a></span>or 
-	         <span className='signUp'><a onClick={()=>self.props.changeBoxMode('SignUp')}>Sign Up</a></span></p>  
+	      <p><span className='login'><a onClick={()=>self.props.changeBoxMode('Login')}>Login</a></span>or
+	         <span className='signUp'><a onClick={()=>self.props.changeBoxMode('SignUp')}>Sign Up</a></span></p>
 	      </div>
 	      <div className="continue">
-	      <p><a onClick={()=>self.props.changePageMode('Homepage')}>Continue To Site</a></p>
+	      <p><Link to='/homepage'>Continue To Site</Link></p>
 	      </div>
       </div>
     );
   }
 }
 export default Splash;
-
-
-
-
-
-
-
