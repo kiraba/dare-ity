@@ -11,7 +11,7 @@ render () {
     <div>
     <p>Donate to this dare: </p>
     <input type='number' className='pledgeInput' value={this.state.amount} onChange={(e) => this.setState({amount: e.target.value})} />
-    <TakeMoney  amount={this.state.amount}/>
+    <TakeMoney {...this.props}  amount={this.state.amount}/>
     </div>
   )
 }
