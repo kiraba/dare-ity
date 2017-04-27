@@ -1,0 +1,21 @@
+.pledgeInput {
+  margin-right: 4px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: transparent;
+}
+
+.btn-primary:hover {
+  color: #FDCB43;
+  background-color: transparent;
+}
+.btn-primary:active {
+  color: #FDCB43;
+  background-color: transparent;
+}
+.btn-primary:focus {
+  color: #FDCB43;
+  background-color: transparent;
+}

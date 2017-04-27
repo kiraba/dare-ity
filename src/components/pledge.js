@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TakeMoney from './TakeMoney'
+import '../css/pledge.css'
 
 class PledgeButton extends Component {
 
@@ -8,7 +9,7 @@ render () {
   const { info } = this.props
   return (
     <div>
-    <input type='number' value={this.state.amount} onChange={(e) => this.setState({amount: e.target.value})} />
+    <input type='number' className='pledgeInput' value={this.state.amount} onChange={(e) => this.setState({amount: e.target.value})} />
     <TakeMoney  amount={this.state.amount}/>
     </div>
   )

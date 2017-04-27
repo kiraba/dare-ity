@@ -54,7 +54,11 @@ class TakeMoney extends React.Component {
         token={this.onToken}
         stripeKey="pk_test_O127XMYBkWs2vpiyD7G9bS2g"
         amount={(this.props.amount)*100}
-      />
+        >
+        <button className="btn-primary">
+        Donate
+        </button>
+      </StripeCheckout>
     )
   }
 }
