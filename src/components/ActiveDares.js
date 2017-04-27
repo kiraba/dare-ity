@@ -36,7 +36,7 @@ class ActiveDares extends Component {
   completeDareButton = () => {
     const dare = this.props.dare || this.props.currentDare || {}
     this.props.viewDare(dare);
-    this.props.history.push('/completeddares');
+    this.props.history.push('/completedare');
   }
 
   personalAccount () {

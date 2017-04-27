@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/splash.css';
 import {User} from 'darity-state';
 import 'whatwg-fetch';
@@ -7,10 +8,6 @@ class NPOCreateDare extends Component {
   state = {
     dareDescription: "",
     dareTitle: ""
-  }
-
-  changePageMode() {
-    this.props.history.push('/homepage')
   }
 
   dareDescriptionChange(e){
@@ -38,7 +35,7 @@ class NPOCreateDare extends Component {
 
      })
    })
-   .then(result=>result.status === 200 ? this.changePageMode() : alert("please try again"))
+   .then(result=>result.status === 200 ? this.props.history.push('/homepage') : alert("please try again"))
  }
 
 
@@ -53,7 +50,7 @@ class NPOCreateDare extends Component {
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
           <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
           <div className="continue">
-  	         <p><a onClick={()=>this.props.history.push('/homepage')}>Continue To Site</a></p>
+  	         <p><Link to='/homepage'>Continue To Site</Link></p>
   	      </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import DareView from './components/DareView';
 import Participate from './components/Participate';
 import UserProfile from './components/UserProfile';
 import CompletedDares from './components/CompletedDares';
+import CompleteDare from './components/completeDare';
 import CompletedDareView from './components/CompletedDareView';
 import Login from './components/Login';
 import SignUp from './components/signUp';
@@ -31,6 +32,7 @@ ReactDOM.render((
         <Route path="/participate" component={Participate}/>
         <Route path="/userprofile/:userId?" component={UserProfile}/>
         <Route path="/completeddares" component={CompletedDares}/>
+        <Route path="/completedare" component={CompleteDare}/>
         <Route path="/completeddareview" component={CompletedDareView}/>
         <Route path="/login" component={Login}/>
         <Route path="/signup" component={SignUp}/>
