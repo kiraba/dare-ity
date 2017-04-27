@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {User} from 'darity-state';
 import 'whatwg-fetch';
-import '../css/app.css';
+import '../css/splash.css';
 
 class Login extends Component {
   state = {

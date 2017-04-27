@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/app.css';
+import './css/splash.css';
 import Homepage from './components/Homepage';
 import SplashPage from './components/SplashPage';
 import DareView from './components/DareView'
@@ -13,7 +13,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      pageMode: 'SplashPage'
+      pageMode: 'Homepage'
     }
   }
 

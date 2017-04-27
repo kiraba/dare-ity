@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { User } from 'darity-state';
-// import '../css/tile.css';
 import { DisplayUser } from 'darity-state'
-// import '../css/viewdare.css';
 import UserDares from './userDares'
 import ActiveDares from './ActiveDares'
 import 'whatwg-fetch';
-
 import '../css/userprofile.css'
 
 class UserProfile extends Component {
@@ -22,7 +19,7 @@ class UserProfile extends Component {
               return activeDares
                     .map((dare, i) => (<ActiveDares  changePageMode={this.props.changePageMode} dare={dare}  key={i} />))
         } else {
-          return <div> @{this.props.currentProfile.name} does not have any active dares. </div>
+          return <div className='NoVid'><div> @{this.props.currentProfile.name} does not have any active dares. </div></div>
         }
       }
       completeExist () {
@@ -56,7 +53,7 @@ class UserProfile extends Component {
           </div>
           <div>
           <h2 className='DareTitle'>Dares to be Funded</h2>
-          <div className='NoVid'>
+          <div className='NoBackground DareInView'>
             {this.dareExist()}
           </div>
           <div>

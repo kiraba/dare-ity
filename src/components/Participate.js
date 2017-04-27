@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {User} from 'darity-state';
 import 'whatwg-fetch';
-import '../css/app.css';
+import '../css/splash.css';
 import { DisplayDare } from 'darity-state';
 
 class Participate extends Component {

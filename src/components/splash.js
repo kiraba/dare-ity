@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/app.css';
+import '../css/splash.css';
 
 class Splash extends Component {
   render() {

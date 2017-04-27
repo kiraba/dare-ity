@@ -43,10 +43,14 @@ class ActiveDares extends Component {
             <div className='Container'>
                 <div className='ActiveDareBox'>
                   <h2>{this.props.dare.title}</h2>
+                  <div className='description'>
                   <p>{this.props.dare.description} </p>
-                  <p>Amount raised: {this.total_pledges()} of {this.props.dare.pledge_amount_threshold} </p>
+                  </div>
                   <p>Donate to this dare: </p>
                   {this.personalAccount()}
+                  <div>
+                  <p className='amountRaised'>Amount raised: {this.total_pledges()} of {this.props.dare.pledge_amount_threshold} </p>
+                  </div>
                 </div>
             </div>
             </div>
