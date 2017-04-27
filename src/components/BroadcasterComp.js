@@ -17,7 +17,7 @@ class BroadcasterComp extends Component {
         <a className="TileLink" onClick={this.viewUser}>
         <img src={user.profilepic_path} alt={""}/>
         <h1>@{user.name}</h1>
-        <p>{user.bio} ...</p>
+        <p><div className='max-height'>{user.bio} </div></p>
         </a>
     </div>
     );

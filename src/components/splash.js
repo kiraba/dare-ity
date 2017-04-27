@@ -4,7 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import '../css/app.css';
+import '../css/splash.css';
 
 class Splash extends Component {
   render() {

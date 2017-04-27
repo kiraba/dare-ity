@@ -1,3 +1,9 @@
+.max-height {
+  height: 80px;
+  overflow: auto;
+  align-self: center;
+  width: 90%;
+}
 .dareBox {
   background-color: white;
   width: 100%;
@@ -112,7 +118,9 @@ a:visited {
 .CompletedDaresOverlay h1, .CompletedDaresOverlay p{
     background-color: rgba(239, 108, 10, .9) !important;
     padding: 7%;
+
 }
+.CompletedDaresOverlay p {padding-bottom: 30% !important;}
 
 .Tile h1 {
   bottom: 50%;
@@ -129,7 +137,9 @@ a:visited {
   margin: 0px;
   min-height: 125px;
   text-overflow: ellipsis;
-  padding-bottom:31%;
+  padding-bottom: 20%;
+  display: flex;
+  justify-content: center;
   -webkit-transform:translate3d(0,100%,0);
       -ms-transform:translate3d(0,100%,0);
           transform:translate3d(0,100%,0);
