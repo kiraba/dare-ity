@@ -9,10 +9,6 @@ class Login extends Component {
             password: ''
           }
 
-changePageMode(){
-    this.props.changePageMode('Homepage')
-  }
-
   changeBoxMode(){
     this.props.changeBoxMode('NPOCreateDare')
   }
@@ -36,7 +32,7 @@ changePageMode(){
         if (user.is_npo === true) {
           return this.changeBoxMode();
         }
-        return this.changePageMode();
+        return this.props.history.push('/homepage')
       } else {
         return user.message
       }
@@ -44,6 +40,7 @@ changePageMode(){
   }
 
   render() {
+    console.log('prerps',this.props)
     return (
       <div className='textAreaBox'>
         <div>

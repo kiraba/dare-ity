@@ -23,7 +23,7 @@ class Broadcasters extends Component {
   render() {
     return (
     <div className="TilesContainer">
-    {this.state.userBlocks.map((user, i) => (<BroadcasterComp changePageMode={this.props.changePageMode} user={user} key={i} />))}
+    {this.state.userBlocks.map((user, i) => (<BroadcasterComp {...this.props} user={user} key={i} />))}
     </div>
     );
   }

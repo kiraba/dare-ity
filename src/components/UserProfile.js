@@ -26,7 +26,7 @@ class UserProfile extends Component {
               .filter(dare => !dare.video_path)
         if(activeDares.length > 0){
               return activeDares
-                    .map((dare, i) => (<ActiveDares  changePageMode={this.props.changePageMode} currentDare={dare}  key={i} />))
+                    .map((dare, i) => (<ActiveDares {...this.props }currentDare={dare}  key={i} />))
         } else {
           return <div className='NoVid'><div> @{this.props.currentProfile.name} does not have any active dares. </div></div>
         }

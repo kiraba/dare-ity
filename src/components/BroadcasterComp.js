@@ -6,7 +6,7 @@ class BroadcasterComp extends Component {
 
   viewUser = () => {
     this.props.viewProfile(this.props.user)
-    this.props.changePageMode('UserProfile')
+    this.props.history.push('/userprofile')
   }
 
   render() {

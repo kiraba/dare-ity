@@ -25,7 +25,7 @@ ReactDOM.render((
 	<Provider store={store}>
   	<Router>
 	    <div>
-        <Route exact path="/" component={App}/>
+        <Route exact path="/" component={SplashPage}/>
         <Route path="/homepage" component={Homepage}/>
         <Route path="/dareview" component={DareView}/>
         <Route path="/participate" component={Participate}/>

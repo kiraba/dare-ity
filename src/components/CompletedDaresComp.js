@@ -7,13 +7,11 @@ class CompletedDaresComp extends Component {
 
   showVid = () => {
     this.props.viewDare(this.props.dare)
-    this.props.changePageMode('CompletedDareView')
+    this.props.history.push('/completeddareview')
   }
 
   render() {
-    console.log('hhehehhehkejkdsjfkdjasfoi')
     var self = this;
-    console.log(self.props)
     const { dare } = this.props
     if(dare.video_path !== null){
       return (

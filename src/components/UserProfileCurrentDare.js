@@ -16,7 +16,7 @@ class UserProfileCurrentDare extends Component {
     .then((user) => {
       this.props.ACTIONREDUCERDISPATCHEDNAME(user.name, user.bio, user.profilepic_path)
       if (user) {
-        return this.changePageMode();
+        return this.props.history.push('/homepage');
       } else { 
         return user.message
       }

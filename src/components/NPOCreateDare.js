@@ -10,7 +10,7 @@ class NPOCreateDare extends Component {
   }
 
   changePageMode() {
-    this.props.changePageMode('Homepage')
+    this.props.history.push('/homepage')
   }
 
   dareDescriptionChange(e){
@@ -53,7 +53,7 @@ class NPOCreateDare extends Component {
           <textarea type='textarea' id='textarea' placeholder='Describe Your Dare' value={this.state.dareDescription} onChange={this.dareDescriptionChange.bind(this)} /> <br />
           <button className='registerButton' type="submit" onClick={this.dareSubmit.bind(this)}>Submit Dare</button>
           <div className="continue">
-  	         <p><a onClick={()=>this.props.changePageMode('Homepage')}>Continue To Site</a></p>
+  	         <p><a onClick={()=>this.props.history.push('/homepage')}>Continue To Site</a></p>
   	      </div>
         </div>
       </div>

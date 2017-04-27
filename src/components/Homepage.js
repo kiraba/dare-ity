@@ -22,19 +22,19 @@ class Homepage extends Component {
             <h1>Active Dares</h1>
           </div>
           <div className='Tiles'>
-            <Dare changePageMode={this.props.changePageMode}/>
+            <Dare {...this.props}/>
           </div>
           <div className='Title'>
             <h1>Broadcasters</h1>
           </div>
           <div className='Tiles'>
-            <Broadcasters changePageMode={this.props.changePageMode} />
+            <Broadcasters {...this.props} />
           </div>
           <div className='Title'>
             <h1>Completed Dares</h1>
           </div>
           <div className='Tiles'>
-            <CompletedDares changePageMode={this.props.changePageMode}/>
+            <CompletedDares {...this.props}/>
           </div>
         </div>
       </div>

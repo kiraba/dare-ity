@@ -11,7 +11,7 @@ class CompleteDare extends Component {
           }
 
 changePageMode(){
-    this.props.changePageMode('Homepage')
+    this.props.history.push('/homepage')
   }
 
   uploadVid(){
@@ -31,7 +31,7 @@ changePageMode(){
     .then((upload) => {
       if (upload.success === true) {
           alert('Your video path has been successfully uploaded.');
-          this.props.changePageMode('Homepage');
+          this.props.history.push('/homepage');
       } else {
         alert('Something went wrong. Please try again.')
       }

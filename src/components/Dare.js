@@ -26,7 +26,7 @@ class Dare extends Component {
   render() {
     return (
     <div className="TilesContainer">
-      {this.state.dareBlocks.map((dare, i) => (<DareComp changePageMode={this.props.changePageMode} dare={dare} key={i} />))}
+      {this.state.dareBlocks.map((dare, i) => (<DareComp {...this.props} dare={dare} key={i} />))}
     </div>
     );
   }

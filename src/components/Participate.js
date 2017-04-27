@@ -10,7 +10,7 @@ class Participate extends Component {
           }
 
 changePageMode(){
-    this.props.changePageMode('Homepage')
+    this.props.history.push('/homepage')
   }
 
   participate(){
@@ -42,7 +42,7 @@ changePageMode(){
         <p>Agreement of Participation</p>
         <p className='Participate'>Amount required to complete dare? <input type='number' min='1' step='any' placeholder='$0.00' value={this.state.threshold} onChange={(e) => this.setState({threshold: e.target.value})} /></p>
           <div>
-          <button className='loginButton' type="submit" onClick={this.participate.bind(this)}>Agree</button>  <button className='loginButton' type="submit" onClick={()=>self.props.changePageMode('Homepage')}>Cancel</button>
+          <button className='loginButton' type="submit" onClick={this.participate.bind(this)}>Agree</button>  <button className='loginButton' type="submit" onClick={()=>self.props.history.push('/homepage')}>Cancel</button>
           </div>
         </div>
       </div>
